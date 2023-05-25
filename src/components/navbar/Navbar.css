@@ -1,0 +1,159 @@
+.Nav {
+    height: 55px;
+    width: 100vw;
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftnav {
+    /* background-color: red; */
+    color: aliceblue;
+    padding-left: 35px;
+}
+
+.rightnav ul {
+    /* width: 50%; */
+    color: aliceblue;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: red; */
+    gap: 40px;
+    padding-right: 25px;
+    list-style-type: none;
+}
+
+
+.rightnav button {
+    height: 30px;
+    width: 65px;
+    padding: 5px;
+    border-radius: 9px;
+    background-color: red;
+    border: none;
+    outline: none;
+    box-shadow: 0px 10px 0px -5px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
+
+}
+
+marquee {
+    color: aliceblue;
+    font-size: 1.2rem;
+
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.input {
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 800px;
+    padding: 10px;
+}
+
+.content1 {
+    /* background-image: url('../../images/dhoni1.webp');
+    background-size: 100% 100%; */
+}
+
+.hamburger {
+    padding: 10px;
+
+}
+
+.icon {
+    color: aliceblue;
+}
+
+.rightnav .hamburger {
+    display: none;
+}
+
+
+/* menu */
+
+nav {
+    position: relative;
+}
+
+.main-manu {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.2s;
+}
+
+.left-menu {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width: 100vw;
+}
+
+.right-menu {
+    background-color: #556482;
+    /* background-color: white; */
+    height: 100vh;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.humberger-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media only screen and (max-width: 670px) {
+    .rightnav ul {
+        display: none;
+    }
+
+    .rightnav .hamburger {
+        display: block;
+    }
+
+    .menu-visible {
+        right: 0;
+    }
+}
