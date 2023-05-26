@@ -11,7 +11,7 @@ function Nav() {
         <nav>
             <div className="Nav">
                 <div className="leftnav">
-                    CRICKET
+                    CRICKETER
                 </div>
                 <div className="rightnav">
                     <ul>

@@ -9,6 +9,11 @@
 .video-card .thumbnail {
     width: 100%;
     height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
 }
 
 
@@ -19,4 +24,31 @@
     border-radius: 10px;
     cursor: pointer;
 
+
 }
+
+.thumbnail-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.video-card .thumbnail:hover .thumbnail-img {
+    display: flex;
+}
+
+.video-card .thumbnail .play {
+    height: 50px;
+    width: 50px;
+}
+
+/* .video-card .thumbnail img:hover {
+    background-color: transparent black;
+} */
