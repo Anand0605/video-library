@@ -13,6 +13,12 @@
     padding-left: 35px;
 }
 
+.leftnav img {
+    height: 50px;
+    width: 80px;
+    border: 50%;
+}
+
 .rightnav ul {
     /* width: 50%; */
     color: aliceblue;
@@ -23,6 +29,12 @@
     gap: 40px;
     padding-right: 25px;
     list-style-type: none;
+}
+
+.rightnav img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
 }
 
 
@@ -43,11 +55,11 @@ a {
 
 }
 
-marquee {
+/* marquee {
     color: aliceblue;
     font-size: 1.2rem;
 
-}
+} */
 
 .search {
     display: flex;
@@ -78,13 +90,9 @@ marquee {
     padding: 10px;
 }
 
-.content1 {
-    /* background-image: url('../../images/dhoni1.webp');
-    background-size: 100% 100%; */
-}
-
 .hamburger {
-    padding: 10px;
+    padding: 15px;
+
 
 }
 
@@ -126,15 +134,30 @@ nav {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
 
 
+}
+
+.cross-icon {
+    height: 35px;
+    width: 35px;
 }
 
 .gallery {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    /* padding-top: 30px; */
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.gallery img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
 .humberger-content {
