@@ -2,12 +2,22 @@ import React, { useState } from 'react'
 import { AiFillPlayCircle } from 'react-icons/ai'
 import './VideoCard.css'
 import play from '../../images/play-button3.svg'
+import { Audio } from 'react-loader-spinner'
 
 const VideoCard = ({ video }) => {
     // const [image, setImage] = useState(video.image)
 
     return (
         <div className="video-card">
+            <Audio
+                height="80"
+                width="80"
+                radius="9"
+                color="green"
+                ariaLabel="loading"
+                wrapperStyle
+                wrapperClass
+            />
             <a href={video.videoLink}>
                 <div className="thumbnail">
                     <img src={video.image} alt="" />
@@ -19,7 +29,7 @@ const VideoCard = ({ video }) => {
             <div className="video-description">
                 <h3>{video.title}</h3>
                 <p>{video.creator}</p>
-                {video.videoLink && <a href={video.videoLink}>link</a>}
+                {video.videoLink && <a href={video.videoLink}></a>}
             </div>
         </div >
     )
