@@ -1,11 +1,13 @@
+import react from 'react'
 import React from 'react'
-import VideoCard from '../../components/videoCard/VideoCard'
-import Search from '../../components/search/Search'
-
+import { Form } from 'react-router-dom'
+// import VideoCard from '../../components/videoCard/VideoCard'
+import React from 'react'
 const Gallary = () => {
     return (
-        <div>
-        </div>
+        <>
+            hello
+        </>
     )
 }
 
