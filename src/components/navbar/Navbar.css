@@ -118,6 +118,7 @@ nav {
     width: 100vw;
     height: 100vh;
     transition: 0.2s;
+    z-index: 10;
 }
 
 .left-menu {
@@ -151,6 +152,7 @@ nav {
     /* padding-top: 30px; */
     flex-direction: column;
     gap: 10px;
+    z-index: 10;
 
 }
 
@@ -165,6 +167,11 @@ nav {
     justify-content: center;
     align-items: center;
 
+
+}
+
+.gallery-content {
+    z-index: 10;
 }
 
 @media only screen and (max-width: 670px) {

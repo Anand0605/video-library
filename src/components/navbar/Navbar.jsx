@@ -5,6 +5,7 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 import { useGlobalVideos } from '../../contexts/videoContext';
 import anand from '../../images/Anand_Gautam.jpg'
 import Navlogo from '../../images/cricket_logo.png'
+import { NavLink } from "react-router-dom";
 
 function Nav() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -18,18 +19,18 @@ function Nav() {
                 <div className="rightnav">
                     <ul>
                         <li>
-                            <a href="">HOME</a>
+                            <NavLink to="/">GALLARY</NavLink>
                         </li>
                         <li>
-                            <a href="">GALLERY</a>
+                            <NavLink to="/gallary">HOME</NavLink>
+
                         </li>
                         <li>
-                            <a href=""><img src={anand} alt="" /></a>
+                            <NavLink to="/login"><img src={anand} alt="" /></NavLink>
+
                         </li>
-                        {/* <li>
-                            <a href="">SIGN UP</a>
-                        </li> */}
-                        <button>Premium</button>
+                        <NavLink to="/gallary"><button>Premium</button></NavLink>
+
                     </ul>
                     <div className="hamburger" onClick={() => setIsMenuVisible((prev) => !prev)}>
                         <RxHamburgerMenu className='icon' />
