@@ -1,8 +1,7 @@
 import React from 'react'
 import './Login.css'
 import anand from '../../../images/Anand_Gautam.jpg'
-import { FaRegUserCircle } from "react-icons/fa";
-import { RiKey2Fill } from "react-icons/ri";
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -13,19 +12,21 @@ const Login = () => {
           <h1>Log In</h1>
           <p>login here using username and password</p>
           <div className="input-username">
-            <input iconstart={FaRegUserCircle} type="text" id='username' name='uname' placeholder='@username' />
-            <input iconend={RiKey2Fill} type="text" id='password' placeholder='password' />
+            <input type="text" id='username' name='uname' placeholder='@Username' />
+            <input type="text" id='password' placeholder='Password' />
             <div className="login-btn">
               <button>Log In</button>
             </div>
           </div>
           <div className="signup">
-            <button className='password-forget-btn'>Forget<br /> Password</button>
-            <button className='signup-btn'>Sign Up</button>
+            <Link to="/forgetPassword"> <button className='password-forget-btn'>Forget<br /> Password</button></Link>
+            <Link to="/signup">
+              <button className='login-signup-btn'>Sign Up</button>
+            </Link>
           </div>
         </div>
 
-      </div>
+      </div >
     </>
   )
 }

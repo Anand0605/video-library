@@ -2,10 +2,12 @@ import React from 'react';
 import Nav from "./components/navbar/Navbar"
 import './App.css'
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/home/Home';
 import Gallary from './pages/gallary/Gallary';
+import Home from './pages/home/Home';
 import Login from './pages/auth/login/Login';
-// import Premium from './components/navbar/N';
+import Signup from './pages/auth/signup/Signup';
+import ForgetPassword from './pages/auth/forgetPassword/ForgetPassword';
+import Premium from './pages/auth/premium/Premium';
 
 function App() {
 
@@ -16,7 +18,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/gallary' element={<Gallary />} />
         <Route path='/login' element={<Login />} />
-        {/* <Route path='/premium' element={<Premium />} /> */}
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/forgetpassword' element={<ForgetPassword />} />
+        <Route path='/premium' element={<Premium />} />
 
       </Routes>
     </>

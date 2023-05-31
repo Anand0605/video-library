@@ -18,12 +18,13 @@ function Nav() {
                 </div>
                 <div className="rightnav">
                     <ul>
+
                         <li>
-                            <NavLink to="/">GALLARY</NavLink>
+                            <NavLink to="/">HOME</NavLink>
+
                         </li>
                         <li>
-                            <NavLink to="/gallary">HOME</NavLink>
-
+                            <NavLink to="/gallary">GALLARY</NavLink>
                         </li>
                         <li>
                             <NavLink to="/login"><img src={anand} alt="" /></NavLink>

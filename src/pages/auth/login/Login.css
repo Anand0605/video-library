@@ -11,12 +11,13 @@
 .login {
     height: 500px;
     width: 350px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #eec0c6;
-    background-image: linear-gradient(315deg, #7ee8fa 0%, #eec0c6 74%);
+    /* background-color: #eec0c6;
+    background-image: linear-gradient(315deg, #7ee8fa 0%, #eec0c6 74%); */
+    background: linear-gradient(125deg, #7ee8fa 50%, #eec0c6 50%);
     border: 2px solid yellowgreen;
     padding: 10px;
 }
@@ -35,6 +36,10 @@
     gap: 20px;
 }
 
+/* .faicon {
+    background-color: black;
+} */
+
 .input-username input {
     height: 40px;
     width: 240px;
@@ -52,6 +57,9 @@
     width: 240px;
     gap: 40px;
     background-color: aliceblue;
+    outline: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .signup {
@@ -63,9 +71,18 @@
 .password-forget-btn {
     height: 50px;
     width: 120px;
+    background-color: aliceblue;
+    outline: none;
+    border: none;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.signup-btn {
+.signup.login.signup-btn {
     height: 50px;
     width: 120px;
+    background-color: aliceblue;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    outline: none;
+    border: none;
+    border: 2px solid black;
 }

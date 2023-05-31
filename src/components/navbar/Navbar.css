@@ -15,8 +15,8 @@
 
 .leftnav img {
     height: 50px;
-    width: 80px;
-    border: 50%;
+    width: 55px;
+    border-radius: 100%;
 }
 
 .rightnav ul {
