@@ -8,11 +8,19 @@ import Login from './pages/auth/login/Login';
 import Signup from './pages/auth/signup/Signup';
 import ForgetPassword from './pages/auth/forgetPassword/ForgetPassword';
 import Premium from './pages/auth/premium/Premium';
+import Watchlater from './pages/menu/watchlater/Watchlater';
+import Likedvideo from './pages/menu/likedvideo/Likedvideo';
+import History from './pages/menu/history/History';
+import Trending from './pages/menu/trending/Trending';
+import Mockman from "mockman-js";
+
+
 
 function App() {
 
   return (
     <>
+
       <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -21,7 +29,11 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/forgetpassword' element={<ForgetPassword />} />
         <Route path='/premium' element={<Premium />} />
-
+        <Route path='/watchlater' element={<Watchlater />} />
+        <Route path='/likedvideo' element={<Likedvideo />} />
+        <Route path='/history' element={<History />} />
+        <Route path='/trending' element={<Trending />} />
+        <Route path='/mockman' element={<Mockman />} />
       </Routes>
     </>
   );

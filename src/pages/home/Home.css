@@ -4,6 +4,8 @@
     align-items: center;
     padding: 10px;
     /* height: 100vh; */
+    flex-wrap: wrap;
+    background-color: #7ee8fa;
 
 }
 

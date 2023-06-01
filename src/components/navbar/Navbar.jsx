@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { AiFillCloseCircle } from 'react-icons/ai'
-import { useGlobalVideos } from '../../contexts/videoContext';
+// import { useGlobalVideos } from '../../contexts/videoContext';
 import anand from '../../images/Anand_Gautam.jpg'
 import Navlogo from '../../images/cricket_logo.png'
 import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Nav() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -30,7 +31,7 @@ function Nav() {
                             <NavLink to="/login"><img src={anand} alt="" /></NavLink>
 
                         </li>
-                        <NavLink to="/gallary"><button>Premium</button></NavLink>
+                        <NavLink to="/premium"><button>Premium</button></NavLink>
 
                     </ul>
                     <div className="hamburger" onClick={() => setIsMenuVisible((prev) => !prev)}>
@@ -52,12 +53,12 @@ function Nav() {
                     <hr />
                     <div className="humberger-content">
                         <div className="gallery-content"><br /><br /><br /><br />
-                            <h2>HOME</h2>
+                            <Link to="/"><h2>HOME</h2></Link>
                             <br />
-                            <h2>WATCH LATER</h2><br />
-                            <h2>HISTORY</h2><br />
-                            <h2>LIKED VIDEO</h2><br />
-                            <h2>TRENDING</h2>
+                            <Link to="/watchlater"><h2>WATCH LATER</h2></Link><br />
+                            <Link to="history"><h2>HISTORY</h2></Link><br />
+                            <Link to="likedvideo"><h2>LIKED VIDEO</h2></Link><br />
+                            <Link to="trending"><h2>TRENDING</h2></Link>
                         </div>
                     </div>
                 </div>

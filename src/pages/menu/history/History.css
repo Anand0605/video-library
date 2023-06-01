@@ -1,0 +1,8 @@
+.main-history {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: aliceblue;
+    height: 100vh;
+    width: 100vw;
+}

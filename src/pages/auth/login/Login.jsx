@@ -16,13 +16,20 @@ const Login = () => {
             <input type="text" id='password' placeholder='Password' />
             <div className="login-btn">
               <button>Log In</button>
+              <br /><br />
+              <button className='login-dummy-user'>Login as Dummy User</button>
             </div>
           </div>
           <div className="signup">
             <Link to="/forgetPassword"> <button className='password-forget-btn'>Forget<br /> Password</button></Link>
+
+
             <Link to="/signup">
-              <button className='login-signup-btn'>Sign Up</button>
+              <button className='signup-btn'>Sign Up</button>
             </Link>
+
+
+
           </div>
         </div>
 

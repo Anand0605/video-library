@@ -1,5 +1,6 @@
 import React from 'react'
 import './Forgetpassword.css'
+import { Link } from 'react-router-dom'
 
 const forgetPassword = () => {
     return (
@@ -7,8 +8,9 @@ const forgetPassword = () => {
             <div className="main-forgetpassword">
                 <div className='forget-password-content'> <h2>Password Recover</h2>
                     <input type="text" name="email" placeholder="Email" />
-                    <h2>Not Registered ? Sign Up</h2>
-                    <h2>Back to Login </h2>
+                    <button>Submit</button>
+                    <h2>Not Registered ? <Link to="/signup">Sign Up</Link></h2>
+                    <h2>Back to <Link to="/login">Login</Link> </h2>
                 </div>
             </div>
 
