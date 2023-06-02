@@ -33,6 +33,11 @@
     gap: 20px;
 }
 
+.username-icon {
+    /* margin-bottom: 30px; */
+    top: -15px;
+}
+
 /* .faicon {
     background-color: black;
 } */

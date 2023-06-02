@@ -2,6 +2,7 @@ import React from 'react'
 import './Login.css'
 import anand from '../../../images/Anand_Gautam.jpg'
 import { Link } from 'react-router-dom'
+import { FaUserAlt } from "react-icons/fa";
 
 const Login = () => {
   return (
@@ -12,7 +13,12 @@ const Login = () => {
           <h1>Log In</h1>
           <p>login here using username and password</p>
           <div className="input-username">
-            <input type="text" id='username' name='uname' placeholder='@Username' />
+            <div className="login-username">
+              <input type="text" id='username' name='uname' placeholder='@Username' />
+              <div className="login-username-icon">
+                <FaUserAlt className='username-icon' />
+              </div>
+            </div>
             <input type="text" id='password' placeholder='Password' />
             <div className="login-btn">
               <button>Log In</button>
