@@ -13,7 +13,7 @@ import Likedvideo from './pages/menu/likedvideo/Likedvideo';
 import History from './pages/menu/history/History';
 import Trending from './pages/menu/trending/Trending';
 import Mockman from "mockman-js";
-
+// import { useGlobal } from '../../../contexts/authContext/';
 
 
 function App() {

@@ -7,9 +7,11 @@ import anand from '../../images/Anand_Gautam.jpg'
 import Navlogo from '../../images/cricket_logo.png'
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { useGlobal } from '../../contexts/authContext';
 
 function Nav() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
+    const { loginFunction, logouthandler, userToken } = useGlobal();
 
     return (
         <nav>
@@ -28,7 +30,12 @@ function Nav() {
                             <NavLink to="/gallary">GALLARY</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/login"><img src={anand} alt="" /></NavLink>
+                            {
+                                userToken ?
+                                    <img src={anand} alt="" /> :
+                                    <NavLink to="/login"><button>login</button></NavLink>
+                            }
+
 
                         </li>
                         <NavLink to="/premium"><button>Premium</button></NavLink>
@@ -45,10 +52,15 @@ function Nav() {
                     <span onClick={() => setIsMenuVisible((prev) => !prev)}>
                         <AiFillCloseCircle className='cross-icon' />
                     </span>
-                    <div className="gallery">
-                        <img src={anand} alt="" />
-                        <h1>Anand Gautam</h1>
-                    </div>
+                    {
+                        userToken ?
+                            <div className="gallery">
+                                <img src={anand} alt="" />
+                                <h1>Anand Gautam</h1>
+                            </div> :
+                            <button>login</button>
+                    }
+
                     <br /><br />
                     <hr />
                     <div className="humberger-content">

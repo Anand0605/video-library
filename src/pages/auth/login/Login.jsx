@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Login.css'
 import anand from '../../../images/Anand_Gautam.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaUserAlt } from "react-icons/fa";
+import { useGlobal } from '../../../contexts/authContext';
 
 const Login = () => {
+  const { loginFunction, logouthandler, userToken } = useGlobal();
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (userToken) {
+      navigate(-1)
+    }
+  })
+
   return (
     <>
       <div className="main-login">
@@ -23,7 +33,7 @@ const Login = () => {
             <div className="login-btn">
               <button>Log In</button>
               <br /><br />
-              <button className='login-dummy-user'>Login as Dummy User</button>
+              <button onClick={loginFunction} className='login-dummy-user'>Login as Dummy User</button>
             </div>
           </div>
           <div className="signup">
