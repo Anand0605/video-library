@@ -7,17 +7,20 @@ import anand from '../../images/Anand_Gautam.jpg'
 import Navlogo from '../../images/cricket_logo.png'
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { useGlobal } from '../../contexts/authContext';
+import { useGlobalAuth } from '../../contexts/authContext';
+import AccountMenu from '../account-menu/Accountmenu'
+// import DehazeIcon from '@mui/icons-material/Dehaze';
 
 function Nav() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
-    const { loginFunction, logouthandler, userToken } = useGlobal();
+    const { loginFunction, logouthandler, userToken } = useGlobalAuth();
 
     return (
         <nav>
             <div className="Nav">
                 <div className="leftnav">
-                    <img src={Navlogo} alt="" />
+                    {/* <img src={Navlogo} alt="" /> */}
+                    {/* <DehazeIcon /> */}
                 </div>
                 <div className="rightnav">
                     <ul>
@@ -30,11 +33,23 @@ function Nav() {
                             <NavLink to="/gallary">GALLARY</NavLink>
                         </li>
                         <li>
-                            {
-                                userToken ?
-                                    <img src={anand} alt="" /> :
-                                    <NavLink to="/login"><button>login</button></NavLink>
-                            }
+                            {userToken ? (
+                                <AccountMenu />
+                            ) : (
+                                <NavLink to="/login">
+                                    <button
+                                        variant="contained"
+                                        size="small"
+                                        style={{
+                                            backgroundColor: "white",
+                                            color: "black",
+                                            padding: "2px",
+                                        }}
+                                    >
+                                        <p>login</p>
+                                    </button>
+                                </NavLink>
+                            )}
 
 
                         </li>

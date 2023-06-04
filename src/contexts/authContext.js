@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const authContext = createContext();
 
@@ -58,9 +58,9 @@ const AuthProvider = ({ children }) => {
     )
 
 }
-const useGlobal = () => {
+const useGlobalAuth = () => {
     return useContext(authContext);
 }
 
-export { AuthProvider, useGlobal };
+export { AuthProvider, useGlobalAuth };
 

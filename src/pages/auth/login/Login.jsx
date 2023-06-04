@@ -3,10 +3,10 @@ import './Login.css'
 import anand from '../../../images/Anand_Gautam.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaUserAlt } from "react-icons/fa";
-import { useGlobal } from '../../../contexts/authContext';
+import { useGlobalAuth } from '../../../contexts/authContext';
 
 const Login = () => {
-  const { loginFunction, logouthandler, userToken } = useGlobal();
+  const { loginFunction, logouthandler, userToken } = useGlobalAuth();
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -25,9 +25,9 @@ const Login = () => {
           <div className="input-username">
             <div className="login-username">
               <input type="text" id='username' name='uname' placeholder='@Username' />
-              <div className="login-username-icon">
+              {/* <div className="login-username-icon">
                 <FaUserAlt className='username-icon' />
-              </div>
+              </div> */}
             </div>
             <input type="text" id='password' placeholder='Password' />
             <div className="login-btn">
@@ -43,9 +43,6 @@ const Login = () => {
             <Link to="/signup">
               <button className='signup-btn'>Sign Up</button>
             </Link>
-
-
-
           </div>
         </div>
 
