@@ -5,6 +5,10 @@ const authContext = createContext();
 
 const AuthProvider = ({ children }) => {
 
+    const [loginInput, setLoginInput] = useState({
+        email: '',
+        password: ''
+    });
     const [userToken, setUserToken] = useState("");
     const [userDetails, setUserDetails] = useState({});
 
@@ -21,27 +25,46 @@ const AuthProvider = ({ children }) => {
     }, []);
 
     const loginFunction = async () => {
+        // console.log(loginInput.email)
+        // console.log(loginInput.password)
         try {
             const res = await fetch("/api/auth/login", {
                 method: "POST",
                 body: JSON.stringify({
-                    email: "gautam05102002@gmail.com",
-                    password: "gautam123"
+                    email: loginInput.email,
+                    password: loginInput.password
                 })
 
             })
             const data = await res.json()
-            console.log(res, data);
-            localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
-            localStorage.setItem("foundUser", JSON.stringify(data.foundUser));
-            setUserToken(data.encodedToken);
-            setUserDetails(data.foundUser);
+            console.log(data);
+            if (data.error) {
+                console.log(data.error)
+            }
+            else {
+                localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
+                localStorage.setItem("foundUser", JSON.stringify(data.foundUser));
+                setUserToken(data.encodedToken);
+                setUserDetails(data.foundUser);
+                setLoginInput({
+                    email: "",
+                    password: ""
+                })
+            }
 
         }
         catch (err) {
             console.log(err)
         }
 
+    };
+    const dummyLogin = () => {
+        setLoginInput({
+            email: "gautam05102002@gmail.com",
+            password: "gautam123"
+        })
+        if (loginInput.email === "gautam05102002@gmail.com")
+            loginFunction()
     };
 
     const logouthandler = () => {
@@ -51,7 +74,7 @@ const AuthProvider = ({ children }) => {
         setUserDetails({});
     };
     return (
-        <authContext.Provider value={{ loginFunction, logouthandler, userToken }}>
+        <authContext.Provider value={{ loginFunction, logouthandler, userToken, dummyLogin, setLoginInput }}>
             {children}
         </authContext.Provider>
 

@@ -6,14 +6,23 @@ import { FaUserAlt } from "react-icons/fa";
 import { useGlobalAuth } from '../../../contexts/authContext';
 
 const Login = () => {
-  const { loginFunction, logouthandler, userToken } = useGlobalAuth();
+  const { loginFunction, logouthandler, userToken, dummyLogin, setLoginInput } = useGlobalAuth();
   const navigate = useNavigate()
 
   useEffect(() => {
     if (userToken) {
       navigate(-1)
     }
-  })
+  }, [userToken])
+
+  const loginFormhandler = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setLoginInput((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
 
   return (
     <>
@@ -23,17 +32,14 @@ const Login = () => {
           <h1>Log In</h1>
           <p>login here using username and password</p>
           <div className="input-username">
-            <div className="login-username">
-              <input type="text" id='username' name='uname' placeholder='@Username' />
-              {/* <div className="login-username-icon">
-                <FaUserAlt className='username-icon' />
-              </div> */}
-            </div>
-            <input type="text" id='password' placeholder='Password' />
+
+            <input type="text" id='username' name='email' placeholder='@Username' onChange={loginFormhandler} />
+
+            <input type="text" name='password' placeholder='Password' onChange={loginFormhandler} />
             <div className="login-btn">
-              <button>Log In</button>
+              <button onClick={loginFunction}>Log In</button>
               <br /><br />
-              <button onClick={loginFunction} className='login-dummy-user'>Login as Dummy User</button>
+              <button onClick={dummyLogin} className='login-dummy-user'>Login as Dummy User</button>
             </div>
           </div>
           <div className="signup">
