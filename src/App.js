@@ -14,6 +14,7 @@ import History from './pages/menu/history/History';
 import Trending from './pages/menu/trending/Trending';
 import Mockman from "mockman-js";
 // import { useGlobal } from '../../../contexts/authContext/';
+import Singlepage from "./pages/singlepage/Singlepage";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/history' element={<History />} />
         <Route path='/trending' element={<Trending />} />
         <Route path='/mockman' element={<Mockman />} />
+        <Route path='/single' element={<Singlepage />} />
       </Routes>
     </>
   );

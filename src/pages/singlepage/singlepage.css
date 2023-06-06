@@ -1,0 +1,15 @@
+.main-singlepage {
+    color: aliceblue;
+    background-color: aqua;
+
+}
+
+.main-singlepage-left {
+    background-color: brown;
+    width: 800px;
+}
+
+.main-singlepage-right {
+    background-color: blue;
+    width: 200px;
+}

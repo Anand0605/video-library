@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './Login.css'
 import anand from '../../../images/Anand_Gautam.jpg'
 import { Link, useNavigate } from 'react-router-dom'
-import { FaUserAlt } from "react-icons/fa";
+// import { FaUserAlt } from "react-icons/fa";
 import { useGlobalAuth } from '../../../contexts/authContext';
 
 const Login = () => {

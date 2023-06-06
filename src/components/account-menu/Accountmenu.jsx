@@ -14,6 +14,7 @@ import Logout from '@mui/icons-material/Logout';
 import { useGlobalAuth } from "../../contexts/authContext";
 import { NavLink } from "react-router-dom";
 import HouseIcon from '@mui/icons-material/House';
+import anand from "../../images/Anand_Gautam.jpg";
 
 export default function AccountMenu() {
 
@@ -47,7 +48,7 @@ export default function AccountMenu() {
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                     >
-                        <Avatar sx={{ width: 28, height: 28, position: 'relative', top: '-5px' }}> <img style={{ height: '30px', width: '30px' }} src='https://www.w3schools.com/w3images/avatar6.png' alt="" /> </Avatar>
+                        <Avatar sx={{ width: 40, height: 40, position: 'relative', top: '1px' }}> <img style={{ height: '40px', width: '40px' }} src={anand} alt="" /> </Avatar>
                     </IconButton>
                 </Tooltip>
             </Box>
@@ -91,7 +92,7 @@ export default function AccountMenu() {
 
                 <NavLink to='/profile' style={{ color: 'black' }} >
                     <MenuItem onClick={handleClose}>
-                        <img src="https://www.w3schools.com/w3images/avatar6.png" alt="" style={{ height: '50px', borderRadius: '100%', margin: '10px' }} /> My account
+                        <img src={anand} alt="" style={{ height: '50px', borderRadius: '100%', margin: '10px' }} /> My account
                     </MenuItem>
                 </NavLink>
                 <Divider />
