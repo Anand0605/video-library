@@ -14,10 +14,10 @@ const Singlepage = () => {
                     <div className="mainsinglepage-left-video">
                         <div className="mainsinglepage-left-video-icon">
                             <img src={anand} alt="" />
-                            <h3>Sports central</h3>
-                            <p>3.8M Subscribers</p>
+                            <p>Sports central<p>3.8M Subscribers</p></p>
                             <button>Subscribers</button>
                         </div>
+                        <br /><br />
                         <div className="like-share-download">
                             <button>👍| 👎</button>
                             <button>Share</button>
@@ -27,17 +27,32 @@ const Singlepage = () => {
                     <div className="mainsinglepage-left-comment">
                         <h2>Comments</h2>
                         <img src={anand} alt="" />
-                        {/* <Input placeholder="Placeholder" inputProps={ariaLabel} /> */}
-                        {/* <ariaLabel /> */}
-                        <TextField className='comment-box' id="standard-basic" label="Standard" variant="standard" placeholder='Add comment' width={1000} />
-                        <div className="comments">
-                            <img src={anand} alt="" />
-                            <p>@anandgautam05 11 day ago <br /> Top class bowling performance❤️❤️❤️❤️❤️</p>
 
-                            {/* <h4>Top class bowling performance❤️❤️❤️❤️❤️</h4> */}
-                            {/* <h4>👍 👎</h4> */}
-                            {/* <p>Reply</p> */}
+                        <TextField
+                            id="standard-textarea"
+                            placeholder="Add comments"
+                            multiline
+                            variant="standard"
+                            style={{ width: "800px", marginLeft: "20px", borderBottom: "1px solid white", color: "white" }}
+                        />
+
+                        <div className="comments">
+                            <div className="user">
+                                <img src={anand} alt="" /><br />
+                                <img src={anand} alt="" /><br />
+                                <img src={anand} alt="" /><br />
+                            </div>
+                            <div className="comment-content">
+                                <h4>@anandgautam05</h4>
+                                <h3>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</h3>
+                                <h4>@anandgautam05</h4>
+                                <h3>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</h3>
+                                <br />
+                                <h4>@anandgautam05</h4>
+                                <h3>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</h3>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div className="mainsinglepage-right">
