@@ -9,15 +9,6 @@ const VideoCard = ({ video }) => {
 
     return (
         <div className="video-card">
-            {/* <Audio
-                height="80"
-                width="80"
-                radius="9"
-                color="green"
-                ariaLabel="loading"
-                wrapperStyle
-                wrapperClass
-            /> */}
             <a href={video.videoLink}>
                 <div className="thumbnail">
                     <img src={video.image} alt="" />
