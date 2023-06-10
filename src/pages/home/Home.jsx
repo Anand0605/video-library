@@ -10,7 +10,9 @@ const Home = () => {
                 <div className="gallery2">
                     <div className="go-to-video"><Link to='/gallary'><button>Go To Video Gallery</button></Link></div>
                 </div>
-                <div className="gallery3"></div>
+                <div className="gallery3">
+                    <br /><br /><hr />
+                </div>
             </div>
         </>
     )
