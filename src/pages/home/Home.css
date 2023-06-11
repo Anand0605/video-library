@@ -1,32 +1,12 @@
-.main-gallery {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* padding: 10px; */
-    min-height: 600px;
-    /* flex-wrap: wrap; */
-    /* background-color: #7ee8fa; */
+.main-gallery {}
 
-}
-
-.gallery1 {
-    /* border: 2px solid red; */
-    /* height: 600px;
-    width: 400px; */
-    /* background-image: url(https://wallpapercave.com/wp/wp3990004.jpg);
-    background-size: 100% 100%; */
-
-
-}
-
-.gallery2 {
-    /* border: 2px solid blue; */
+.main-page {
     height: 600px;
-    width: 1450px;
+    width: 1366px;
     /* width: 200vw; */
     background-image: url(https://r4.wallpaperflare.com/wallpaper/615/654/332/team-india-national-cricket-team-indian-cricket-team-ms-dhoni-wallpaper-e9ef2eb3092bc27895e41288dac172cd.jpg);
     background-size: 100% 100%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,11 +33,91 @@
     font-size: bold;
 }
 
+.player-deatils {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 500px;
+    flex-wrap: wrap;
+    /* padding: 10px; */
+    gap: 20px;
+
+}
+
+.gallery1 {
+    border: 2px solid red;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://e0.pxfuel.com/wallpapers/606/899/desktop-wallpaper-ms-dhoni-7-looking-at-sky-drawing-ms-dhoni-dhoni-best-for-mobile-thumbnail.jpg);
+    background-size: 100% 100%;
+
+}
+
+.btn {
+    height: 40px;
+    width: 100px;
+    padding: 5px;
+    background-color: #0b0559;
+    color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+}
+
+
+.gallery2 {
+    border: 2px solid greenyellow;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://e0.pxfuel.com/wallpapers/827/998/desktop-wallpaper-virat-kohli-virat-kohli-batting-thumbnail.jpg);
+    background-size: 100% 100%;
+}
+
 .gallery3 {
-    /* border: 2px solid greenyellow; */
-    /* height: 600px;
-    width: 400px; */
-    /* width: 200vw; */
-    /* background-image: url(https://e0.pxfuel.com/wallpapers/827/998/desktop-wallpaper-virat-kohli-virat-kohli-batting-thumbnail.jpg);
-    background-size: 100% 100%; */
+    border: 2px solid greenyellow;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://i.pinimg.com/originals/d2/d3/04/d2d304f482fdbf0e813f18829e0042a4.jpg);
+    background-size: 100% 100%;
+}
+
+.gallery4 {
+    border: 2px solid greenyellow;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://i.pinimg.com/550x/e4/b4/6a/e4b46a64a964abd188edbfaeca9c7cb2.jpg);
+    background-size: 100% 100%;
+}
+
+.gallery5 {
+    border: 2px solid greenyellow;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://img.mensxp.com/media/content/2021/Dec/Mithali-Raj-1_61a9c3acbff0f.jpeg);
+    background-size: 100% 100%;
+}
+
+.gallery6 {
+    border: 2px solid greenyellow;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://pbs.twimg.com/media/FetoiBUagAABdAy.jpg);
+    background-size: 100% 100%;
+}
+
+.gallery7 {
+    border: 2px solid greenyellow;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://im.indiatimes.in/content/2023/Mar/harmanpreet-kaur_640c57a519afb.jpg);
+    background-size: 100% 100%;
+}
+
+.gallery8 {
+    border: 2px solid greenyellow;
+    height: 400px;
+    width: 300px;
+    background-image: url(https://cricket.upcomingwiki.com/public/images/gallery/24127.jpg);
+    background-size: 100% 100%;
 }
