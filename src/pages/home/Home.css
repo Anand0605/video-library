@@ -1,8 +1,8 @@
-.main-gallery {}
+/* .main-gallery {} */
 
 .main-page {
     height: 600px;
-    width: 1366px;
+    width: 1355px;
     /* width: 200vw; */
     background-image: url(https://r4.wallpaperflare.com/wallpaper/615/654/332/team-india-national-cricket-team-indian-cricket-team-ms-dhoni-wallpaper-e9ef2eb3092bc27895e41288dac172cd.jpg);
     background-size: 100% 100%;
@@ -120,4 +120,12 @@
     width: 300px;
     background-image: url(https://cricket.upcomingwiki.com/public/images/gallery/24127.jpg);
     background-size: 100% 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-page {
+        width: 390px;
+        height: 400px;
+
+    }
 }

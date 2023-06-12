@@ -18,7 +18,7 @@ const Home = () => {
             <h2>Indian Cricket player Details (Male & Female)</h2>
             <br />
             <div className="player-deatils">
-                <div className="gallery1"><button className='btn' type="button">M S Dhoni</button></div>
+                <div className="gallery1"><Link src="https://en.wikipedia.org/wiki/MS_Dhoni#:~:text=13%20External%20links-,Early%20life%20and%20background,the%20Almora%20District%20of%20Uttarakhand."><button className='btn' type="button">M S Dhoni</button></Link></div>
                 <div className="gallery2"><button className='btn' type="button">Virat Kohli</button></div>
                 <div className="gallery3"><button className='btn' type="button">Kl Rahul</button></div>
                 <div className="gallery4"><button className='btn' type="button">Rohit Sharma</button></div>
