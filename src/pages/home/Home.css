@@ -2,7 +2,7 @@
 
 .main-page {
     height: 600px;
-    width: 1355px;
+    width: 1361px;
     /* width: 200vw; */
     background-image: url(https://r4.wallpaperflare.com/wallpaper/615/654/332/team-india-national-cricket-team-indian-cricket-team-ms-dhoni-wallpaper-e9ef2eb3092bc27895e41288dac172cd.jpg);
     background-size: 100% 100%;
@@ -16,7 +16,7 @@
 .go-to-video button {
     height: 50px;
     width: 150px;
-    background-color: #0b0559;
+    background-color: #392ced;
     border-radius: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border: none;
@@ -33,14 +33,22 @@
     font-size: bold;
 }
 
+.heading {
+    width: 1360px;
+    padding: 20px;
+    background-color: #392ced;
+}
+
 .player-deatils {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 500px;
+    width: 1360px;
     flex-wrap: wrap;
     /* padding: 10px; */
     gap: 20px;
+    background-color: #392ced;
 
 }
 

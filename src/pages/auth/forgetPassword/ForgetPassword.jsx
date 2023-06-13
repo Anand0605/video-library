@@ -1,6 +1,7 @@
 import React from 'react'
 import './Forgetpassword.css'
 import { Link } from 'react-router-dom'
+import Footer from '../../../components/footer/Footer'
 
 const forgetPassword = () => {
     return (
@@ -13,6 +14,7 @@ const forgetPassword = () => {
                     <h2>Back to <Link to="/login">Login</Link> </h2>
                 </div>
             </div>
+            <Footer />
 
         </>
     )

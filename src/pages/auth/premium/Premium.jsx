@@ -1,6 +1,7 @@
 import React from 'react'
 import './Premium.css'
 import { Link } from 'react-router-dom'
+import Footer from '../../../components/footer/Footer'
 
 const Premium = () => {
     return (
@@ -11,6 +12,7 @@ const Premium = () => {
 
                 </div> */}
             </div></Link>
+            <Footer />
         </>
 
     )

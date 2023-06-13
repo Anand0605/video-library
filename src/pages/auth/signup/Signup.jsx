@@ -1,6 +1,7 @@
 import React from 'react'
 import './Signup.css'
 import { Link } from 'react-router-dom'
+import Footer from '../../../components/footer/Footer'
 
 const Signup = () => {
     return (
@@ -22,6 +23,7 @@ const Signup = () => {
 
 
             </div>
+            <Footer />
         </>
     )
 }

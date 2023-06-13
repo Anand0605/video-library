@@ -5,7 +5,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    /* background-color: #000000; */
+    background-color: #392ced;
 }
 
 .leftnav {
@@ -61,9 +62,8 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
-    /* background-color: #7ee8fa; */
-    background-color: black;
+    /* background-color: black; */
+    background-color: #392ced;
 
 }
 
@@ -85,7 +85,8 @@ a {
     gap: 20px;
     min-height: 800px;
     padding: 10px;
-    background-color: black;
+    /* background-color: black; */
+    background-color: #392ced;
 }
 
 .hamburger {
