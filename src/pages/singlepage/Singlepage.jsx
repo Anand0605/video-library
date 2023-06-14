@@ -41,6 +41,7 @@ const Singlepage = () => {
                                 <img src={anand} alt="" /><br />
                                 <img src={anand} alt="" /><br />
                                 <img src={anand} alt="" /><br />
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/PPgtFMUu-lc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                             <div className="comment-content">
                                 <h4>@anandgautam05</h4>

@@ -1,3 +1,39 @@
 .search h1 {
     color: aliceblue;
 }
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: black; */
+    background-color: #392ced;
+    padding: 5px;
+
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 4px;
+    border: 1px solid black;
+}
+
+.search-placeholder {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 8px;
+    left: 5px;
+
+}

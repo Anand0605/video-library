@@ -6,8 +6,10 @@ const Search = () => {
     return (
         <div className="search" ><br />
             <h1>SPORTS VIDEO GALLERY</h1>
-            <CiSearch style={{ position: 'relative', bottom: '12px', left: '530px' }} />
-            <input className='input' type="search" id="site-search" name="search" placeholder='Search'></input>
+            <div className="search-placeholder">
+                <CiSearch className='search-icon' />
+                <input type="search" id="site-search" name="search" placeholder='Search'></input>
+            </div>
         </div>
     )
 }

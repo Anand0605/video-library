@@ -9,8 +9,17 @@ const AuthProvider = ({ children }) => {
         email: '',
         password: ''
     });
+
+    const [signupInput, setSignupInput] = useState({
+        fname: '',
+        lname: '',
+        email: '',
+        password: ''
+    })
     const [userToken, setUserToken] = useState("");
     const [userDetails, setUserDetails] = useState({});
+
+    const [createdUser, setCreatedUser] = useState({})
 
 
 
@@ -20,9 +29,12 @@ const AuthProvider = ({ children }) => {
             setUserToken(token);
             setUserDetails(JSON.parse(localStorage.getItem("foundUser")));
 
-        }
+            setCreatedUser(JSON.parse(localStorage.getItem("createdUser")))
 
+        }
     }, []);
+
+    /*-------Login------*/
 
     const loginFunction = async () => {
         // console.log(loginInput.email)
@@ -58,6 +70,48 @@ const AuthProvider = ({ children }) => {
         }
 
     };
+
+
+    /*----------Signup----------*/
+
+    const signupFunction = async () => {
+        // console.log(loginInput.email)
+        // console.log(loginInput.password)
+        try {
+            const res = await fetch("/api/auth/signup", {
+                method: "POST",
+                body: JSON.stringify({
+                    fname: signupInput.fname,
+                    lname: signupInput.lname,
+                    email: signupInput.email,
+                    password: signupInput.password
+                })
+
+            })
+            const data = await res.json()
+            console.log(data);
+            if (data.error) {
+                console.log(data.error)
+            }
+            else {
+                localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
+                localStorage.setItem("createdUser", JSON.stringify(data.createdUser));
+                setUserToken(data.encodedToken);
+                setCreatedUser(data.createdUser);
+                setSignupInput({
+                    fname: "",
+                    lname: "",
+                    email: "",
+                    password: ""
+                })
+            }
+
+        }
+        catch (err) {
+            console.log(err)
+        }
+
+    };
     const dummyLogin = () => {
         setLoginInput({
             email: "gautam05102002@gmail.com",
@@ -67,14 +121,33 @@ const AuthProvider = ({ children }) => {
             loginFunction()
     };
 
+    const signuplogin = () => {
+        setSignupInput({
+            fname: "Anand",
+            lname: "Gautam",
+            email: "gautam05102002@gmail.com",
+            password: "gautam123"
+        })
+        if (signupInput.email === "gautam05102002@gmail.com")
+            signupFunction()
+    };
+
+
     const logouthandler = () => {
         localStorage.removeItem("userToken");
         localStorage.removeItem("foundUser");
         setUserToken("");
         setUserDetails({});
     };
+
+    const signuplogouthandler = () => {
+        localStorage.removeItem("userToken");
+        localStorage.removeItem("createdUser");
+        setUserToken("");
+        setCreatedUser({});
+    };
     return (
-        <authContext.Provider value={{ loginFunction, logouthandler, userToken, dummyLogin, setLoginInput }}>
+        <authContext.Provider value={{ loginFunction, logouthandler, userToken, dummyLogin, setLoginInput, signupFunction, signuplogin, setSignupInput, signuplogouthandler }}>
             {children}
         </authContext.Provider>
 
