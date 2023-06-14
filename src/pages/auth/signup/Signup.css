@@ -56,3 +56,37 @@
     background-color: #002244;
     color: aliceblue;
 }
+
+.fname {
+    position: relative;
+}
+
+.fname-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.email {
+    position: relative;
+}
+
+.email-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    height: 20px;
+    width: 20px;
+}
+
+.sign-password {
+    position: relative;
+}
+
+.sign-password-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    height: 20px;
+    width: 20px;
+}

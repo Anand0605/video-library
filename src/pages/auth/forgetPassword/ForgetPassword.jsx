@@ -2,13 +2,17 @@ import React from 'react'
 import './Forgetpassword.css'
 import { Link } from 'react-router-dom'
 import Footer from '../../../components/footer/Footer'
+import { AiOutlineMail } from "react-icons/ai";
 
 const forgetPassword = () => {
     return (
         <>
             <div className="main-forgetpassword">
                 <div className='forget-password-content'> <h2>Password Recover</h2>
-                    <input type="text" name="email" placeholder="Email" />
+                    <div className="forget">
+                        <AiOutlineMail className='forget-icon' />
+                        <input type="text" name="email" placeholder="Email" />
+                    </div>
                     <button>Submit</button>
                     <h2>Not Registered ? <Link to="/signup">Sign Up</Link></h2>
                     <h2>Back to <Link to="/login">Login</Link> </h2>

@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import './Login.css'
 import anand from '../../../images/Anand_Gautam.jpg'
 import Footer from '../../../components/footer/Footer'
+import { BiUserCircle } from "react-icons/bi"
+import { RiLockPasswordLine } from "react-icons/ri";
 import { Link, useNavigate } from 'react-router-dom'
-// import { FaUserAlt } from "react-icons/fa";
 import { useGlobalAuth } from '../../../contexts/authContext';
 
 const Login = () => {
@@ -33,10 +34,15 @@ const Login = () => {
           <h1>Log In</h1>
           <p>login here using username and password</p>
           <div className="input-username">
+            <div className="username-input">
+              <BiUserCircle className="user-icon" />
+              <input type="text" id='username' name='email' placeholder='@Username' onChange={loginFormhandler} />
+            </div>
 
-            <input type="text" id='username' name='email' placeholder='@Username' onChange={loginFormhandler} />
-
-            <input type="text" name='password' placeholder='Password' onChange={loginFormhandler} />
+            <div className="password-input">
+              <RiLockPasswordLine className='password-icon' />
+              <input type="text" name='password' placeholder='Password' onChange={loginFormhandler} />
+            </div>
             <div className="login-btn">
               <button onClick={loginFunction}>Log In</button>
               <br /><br />
