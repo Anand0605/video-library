@@ -10,7 +10,7 @@ export const videos = [
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     creator: "Anand Kumar Gautam",
-    videoLink: "https://www.youtube.com/watch?v=PPgtFMUu-lc",
+    videoLink: "https://www.youtube.com/watch?v=BCOXL3SGb1U",
     image: "https://akm-img-a-in.tosshub.com/lingo/itne/images/story/202302/mandhanaf-sixteen_nine.jpg?size=1200:675",
 
   },

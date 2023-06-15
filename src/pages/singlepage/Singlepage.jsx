@@ -13,16 +13,19 @@ const Singlepage = () => {
                 <div className="mainsinglepage-left">
                     <div className="mainsinglepage-left-video">
                         <div className="mainsinglepage-left-video-icon">
-                            <img src={anand} alt="" />
+                            <div className="iframe">
+                                <iframe width="995" height="465" src="https://www.youtube.com/embed/PPgtFMUu-lc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            {/* <img src={anand} alt="" />
                             <p>Sports central<p>3.8M Subscribers</p></p>
-                            <button>Subscribers</button>
+                            <button>Subscribers</button> */}
                         </div>
-                        <br /><br />
-                        <div className="like-share-download">
+                        <br />
+                        {/* <div className="like-share-download">
                             <button>👍| 👎</button>
                             <button>Share</button>
                             <button>Clip✂️</button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="mainsinglepage-left-comment">
                         <h2>Comments</h2>
@@ -41,7 +44,6 @@ const Singlepage = () => {
                                 <img src={anand} alt="" /><br />
                                 <img src={anand} alt="" /><br />
                                 <img src={anand} alt="" /><br />
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/PPgtFMUu-lc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                             <div className="comment-content">
                                 <h4>@anandgautam05</h4>

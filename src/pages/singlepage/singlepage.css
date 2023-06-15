@@ -7,6 +7,13 @@
     /* align-items: center; */
 }
 
+.iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .mainsinglepage-left {
     min-height: 100vh;
     width: 1000px;
@@ -78,9 +85,6 @@
 
 .comments {
     display: flex;
-    /* justify-content: space-around; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
     align-items: flex-start;
     gap: 10px;
 }
