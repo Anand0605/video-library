@@ -5,6 +5,7 @@ import anand from '../../images/Anand_Gautam.jpg'
 // import { ariaLabel } from "../";.
 // import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import msd from '../../images/MS-Dhoni.jpg'
 
 const Singlepage = () => {
     return (
@@ -14,7 +15,7 @@ const Singlepage = () => {
                     <div className="mainsinglepage-left-video">
                         <div className="mainsinglepage-left-video-icon">
                             <div className="iframe">
-                                <iframe width="995" height="465" src="https://www.youtube.com/embed/PPgtFMUu-lc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                {/* <iframe width="900" height="465" src={`https://www.youtube.com/embed/${}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                             </div>
                             {/* <img src={anand} alt="" />
                             <p>Sports central<p>3.8M Subscribers</p></p>
@@ -59,6 +60,15 @@ const Singlepage = () => {
                     </div>
                 </div>
                 <div className="mainsinglepage-right">
+                    <div className="msd">
+                        {/* <img src={msd} alt="" />
+                        <img src={msd} alt="" /> */}
+                    </div>
+                    <div className="discription">
+                        {/* <p>Lorem, ipsum dolor sit amet consectetur</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur</p> */}
+                    </div>
+
 
                 </div>
             </div >

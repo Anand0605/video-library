@@ -1,23 +1,22 @@
 .mainsinglepage {
     color: aliceblue;
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh; */
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    /* background-color: aqua; */
 }
 
 .iframe {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.mainsinglepage-left {
+/* .mainsinglepage-left {
     min-height: 100vh;
-    width: 1000px;
-}
+    width: 900px;
+} */
 
 .mainsinglepage-left-video {
     /* background-color: blueviolet; */
@@ -25,26 +24,26 @@
     border: 2px solid red;
     display: flex;
     align-items: flex-end;
-    gap: 120px;
+    background-color: black;
 }
 
-.mainsinglepage-left-video-icon {
+/* .mainsinglepage-left-video-icon {
     display: flex;
     align-items: flex-end;
-    gap: 10px;
+    gap: 10px; 
     padding-bottom: 10px;
     color: black;
-}
+    
+} */
 
-.mainsinglepage-left-video-icon img {
+/* .mainsinglepage-left-video-icon img {
     height: 50px;
     width: 50px;
     border-radius: 100%;
     padding-left: 10px;
     padding-top: 10px;
     box-shadow: 10px;
-}
-
+} */
 .mainsinglepage-left-video-icon button {
     height: 35px;
     width: 120px;
@@ -52,23 +51,21 @@
     color: black;
 }
 
-.like-share-download {
+/* .like-share-download {
     display: flex;
     gap: 18px;
     padding-bottom: 10px;
-}
+} */
 
-.like-share-download button {
+/* .like-share-download button {
     height: 35px;
     width: 120px;
     border-radius: 20px;
-}
+} */
 
 .mainsinglepage-left-comment {
-    height: 73vh;
+    /* height: 73vh; */
     border: 2px solid yellowgreen;
-    /* background-color: aliceblue; */
-
 }
 
 .mainsinglepage-left-comment {
@@ -79,10 +76,6 @@
     color: aliceblue;
 }
 
-.mainsinglepage-left-comment {
-    padding: 20px;
-}
-
 .comments {
     display: flex;
     align-items: flex-start;
@@ -90,7 +83,7 @@
 }
 
 .comment-content {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     color: black;
 }
 
@@ -99,13 +92,12 @@
 }
 
 .mainsinglepage-left-comment img {
-    /* padding-left: 25px; */
+    padding-left: 25px;
     margin-left: 20px;
 }
 
 .comment-img {
     display: flex;
-
 }
 
 .mainsinglepage-left-comment img {
@@ -119,14 +111,33 @@
 .mainsinglepage-left-comment.comments {
     display: flex;
     justify-content: flex-end;
-    /* color: black; */
-
 }
 
 .mainsinglepage-right {
-    /* background-color: blue; */
     width: 400px;
     height: 1000px;
-    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* flex-direction: column; */
 
+}
+
+.msd {
+    height: 120px;
+    width: 280px;
+    background-color: red;
+    padding: 5px;
+
+}
+
+.mainsinglepage-right p {
+    color: black;
+    padding: 8px;
+}
+
+.discription {
+    height: 120px;
+    width: 280px;
+    background-color: blue;
 }
