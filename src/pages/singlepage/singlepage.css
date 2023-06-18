@@ -1,131 +1,150 @@
 .mainsinglepage {
-    color: aliceblue;
-    /* height: 100vh; */
-    /* width: 100vw; */
     display: flex;
-    justify-content: center;
-    /* background-color: aqua; */
+    /* justify-content: center; */
+    min-height: 900px;
+    width: 100vw;
+    background-color: blue;
 }
 
-.iframe {
+.left-singlepage {
+    background-color: blue;
+    min-height: 900px;
+    width: 950px;
+}
+
+.left-singlepage-video {
+    height: 450px;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 60px;
+    padding: 30px;
+}
+
+.left-singlepage-video .btn1 {
+    height: 40px;
+    width: 80px;
+    margin-top: 380px;
+    background-color: blue;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+}
+
+
+.left-singlepage-comments {
+    height: 450px;
+    background-color: crimson;
+}
+
+.right-singlepage {
+    min-height: 900px;
+    width: 450px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.suggest-video {
+    height: 150px;
+    width: 218px;
+    background-color: brown;
+}
+
+.suggest-discription {
+    height: 150px;
+    width: 218px;
+    background-color: chocolate;
+}
+
+
+/* .iframe {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* .mainsinglepage-left {
-    min-height: 100vh;
-    width: 900px;
 } */
 
-.mainsinglepage-left-video {
-    /* background-color: blueviolet; */
-    height: 70vh;
+.singlepage-left-video {
+    /* height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    background-color: black; */
     border: 2px solid red;
-    display: flex;
-    align-items: flex-end;
-    background-color: black;
+    height: 50vh;
+    width: 50vw;
 }
 
-/* .mainsinglepage-left-video-icon {
-    display: flex;
-    align-items: flex-end;
-    gap: 10px; 
-    padding-bottom: 10px;
-    color: black;
-    
-} */
-
-/* .mainsinglepage-left-video-icon img {
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    padding-left: 10px;
-    padding-top: 10px;
-    box-shadow: 10px;
-} */
-.mainsinglepage-left-video-icon button {
+/* .mainsinglepage-left-video-icon button {
     height: 35px;
     width: 120px;
     border-radius: 20px;
     color: black;
-}
-
-/* .like-share-download {
-    display: flex;
-    gap: 18px;
-    padding-bottom: 10px;
 } */
 
-/* .like-share-download button {
-    height: 35px;
-    width: 120px;
-    border-radius: 20px;
-} */
+
+/* -----------comment------------ */
 
 .mainsinglepage-left-comment {
-    /* height: 73vh; */
-    border: 2px solid yellowgreen;
+    background-color: blue;
+    /* height: 511px; */
 }
 
-.mainsinglepage-left-comment {
+/* .mainsinglepage-left-comment {
     color: black;
-}
+} */
 
-.mainsinglepage-left-comment .comment-box {
+/* .mainsinglepage-left-comment .comment-box {
     color: aliceblue;
-}
+} */
 
-.comments {
+/* .comments {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-}
+} */
 
-.comment-content {
-    /* margin-top: 15px; */
+/* .comment-content {
     color: black;
-}
+} */
 
-.placeholder {
+/* .placeholder {
     background-color: aliceblue;
-}
+} */
 
-.mainsinglepage-left-comment img {
+/* .mainsinglepage-left-comment img {
     padding-left: 25px;
     margin-left: 20px;
-}
+} */
 
-.comment-img {
+/* .comment-img {
     display: flex;
-}
+} */
 
-.mainsinglepage-left-comment img {
+/* .mainsinglepage-left-comment img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     padding-left: 10px;
     padding-top: 10px;
-}
+} */
 
-.mainsinglepage-left-comment.comments {
+/* .mainsinglepage-left-comment.comments {
     display: flex;
     justify-content: flex-end;
-}
+} */
 
-.mainsinglepage-right p {
-    color: black;
-    padding: 8px;
-}
+/* ---------Suggest Video---------- */
 
 .mainsinglepage-right {
-    width: 450px;
+    /* width: 450px;
     height: 1000px;
     background-color: aqua;
     display: flex;
     justify-content: center;
-    gap: 10px;
-
+    gap: 10px; */
+    border: 2px solid red;
 
 }
 
