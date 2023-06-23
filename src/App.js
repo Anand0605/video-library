@@ -35,7 +35,7 @@ function App() {
         <Route path='/history' element={<History />} />
         <Route path='/trending' element={<Trending />} />
         <Route path='/mockman' element={<Mockman />} />
-        <Route path='/single' element={<Singlepage />} />
+        <Route path='/single/:id' element={<Singlepage />} />
       </Routes>
     </>
   );

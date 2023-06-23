@@ -15,7 +15,7 @@ const Gallary = () => {
             <div className="main">
                 {
                     allVideos.map((video) => (
-                        <Link to='/single'><VideoCard video={video} /></Link>
+                        <Link to={`/single/${video._id}`}><VideoCard video={video} /></Link>
                     ))
                 }
             </div>
