@@ -41,7 +41,7 @@ const Singlepage = () => {
 
 
                         <div className="iframe">
-                            <iframe width="560" height="215" src={`https://www.youtube.com/embed/${videoData._id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            {/* <iframe width="560" height="215" src={`https://www.youtube.com/embed/${videoData._id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                         </div>
                         <div className="like-btn">
                             <button className='btn1'>like</button>
