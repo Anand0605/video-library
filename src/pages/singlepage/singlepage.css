@@ -1,28 +1,19 @@
 .mainsinglepage {
     display: flex;
-    /* justify-content: center; */
     min-height: 900px;
     width: 100vw;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
-.left-singlepage {
+.left-singlepage img {
     background-color: blue;
-    min-height: 900px;
+    min-height: 450px;
     width: 950px;
 }
 
 .left-singlepage-video {
-    height: 450px;
+    height: 550px;
     background-color: cadetblue;
-    /* display: flex; */
-    /* justify-content: flex-start;
-    align-items: flex-start;
-     */
-    /* flex-direction: row; */
-    /* gap: 60px;
-    padding: 30px; */
-
 }
 
 .left-singlepage-video img {
@@ -30,36 +21,27 @@
     width: 950px;
 }
 
-.iframe {
+/* .iframe {
     height: 400px;
     width: 924px;
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
     background-color: aqua;
-}
-
-.like-btn.btn1 {
-    height: 50px;
-    width: 924px;
-    /* background-color: chartreuse; */
-}
-
-.left-singlepage-video .btn1 {
-    height: 35px;
-    width: 80px;
-    margin-top: 380px;
-    background-color: blue;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    /* padding-right: 50px; */
-}
-
-
+} */
 .left-singlepage-comments {
     height: 450px;
     background-color: crimson;
+}
+
+.like-btn {
+    /* padding: 10px; */
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.like-btn.btn1 {
+    padding: 10px;
 }
 
 .right-singlepage {
@@ -67,7 +49,6 @@
     width: 420px;
     background-color: blueviolet;
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
 }
@@ -84,103 +65,10 @@
     background-color: chocolate;
 }
 
-
-/* .iframe {
+.loading {
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-} */
-
-.singlepage-left-video {
-    /* height: 70vh;
-    display: flex;
-    align-items: flex-end;
-    background-color: black; */
-    border: 2px solid red;
-    height: 50vh;
-    width: 50vw;
-}
-
-/* .mainsinglepage-left-video-icon button {
-    height: 35px;
-    width: 120px;
-    border-radius: 20px;
-    color: black;
-} */
-
-
-/* -----------comment------------ */
-
-.mainsinglepage-left-comment {
-    background-color: blue;
-    /* height: 511px; */
-}
-
-/* .mainsinglepage-left-comment {
-    color: black;
-} */
-
-/* .mainsinglepage-left-comment .comment-box {
-    color: aliceblue;
-} */
-
-/* .comments {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-} */
-
-/* .comment-content {
-    color: black;
-} */
-
-/* .placeholder {
-    background-color: aliceblue;
-} */
-
-/* .mainsinglepage-left-comment img {
-    padding-left: 25px;
-    margin-left: 20px;
-} */
-
-/* .comment-img {
-    display: flex;
-} */
-
-/* .mainsinglepage-left-comment img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    padding-left: 10px;
-    padding-top: 10px;
-} */
-
-/* .mainsinglepage-left-comment.comments {
-    display: flex;
-    justify-content: flex-end;
-} */
-
-/* ---------Suggest Video---------- */
-
-.mainsinglepage-right {
-    /* width: 450px;
-    height: 1000px;
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    gap: 10px; */
-    border: 2px solid red;
-
-}
-
-.msd {
-    height: 150px;
-    width: 220px;
-    background-color: chartreuse;
-}
-
-.discription {
-    height: 150px;
-    width: 220px;
-    background-color: crimson;
+    /* background-color: red; */
 }
