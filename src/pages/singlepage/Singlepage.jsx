@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './singlepage.css'
-import anand from '../../images/Anand_Gautam.jpg'
-// import Input from '@mui/material/Input';
-// import { ariaLabel } from "../";.
-// import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 // import msd from '../../images/MS-Dhoni.jpg'
 
 const Singlepage = () => {
@@ -34,19 +29,19 @@ const Singlepage = () => {
             <div className="mainsinglepage">
                 <div className="left-singlepage">
                     <div className="left-singlepage-video">
-                        {/* <a href={videoData.videoLink}></a> */}
-                        {/* <img src={videoData.image} alt="" />
+                        <Link to={videoData?.videoLink}></Link>
+                        <img src={videoData?.image} alt="" />
                         <h1> {videoData?.title}</h1>
-                        <p>{videoData.creator}</p> */}
+                        <p>{videoData?.creator}</p>
 
 
                         <div className="iframe">
                             {/* <iframe width="560" height="215" src={`https://www.youtube.com/embed/${videoData._id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                         </div>
                         <div className="like-btn">
-                            <button className='btn1'>like</button>
+                            {/* <button className='btn1'>like</button>
                             <button className='btn1'>share</button>
-                            <button className='btn1'>save</button>
+                            <button className='btn1'>save</button> */}
                         </div>
                     </div>
                     <div className="left-singlepage-comments">
@@ -54,7 +49,7 @@ const Singlepage = () => {
                     </div>
                 </div>
                 <div className="right-singlepage">
-                    {/* <h2>Suggest Video</h2> */}
+                    <h2>Suggest Video</h2>
                     <div className="suggest-video">
 
                     </div>

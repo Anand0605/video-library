@@ -5,7 +5,7 @@ import play from '../../images/play-button3.svg'
 import { Audio } from 'react-loader-spinner'
 
 const VideoCard = ({ video }) => {
-    // const [image, setImage] = useState(video.image)
+    const [image, setImage] = useState(video.image)
 
     return (
         <div className="video-card">
