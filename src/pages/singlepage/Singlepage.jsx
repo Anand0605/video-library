@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './singlepage.css'
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import loading from '../../images/1487.gif'
+import { useGlobalVideos } from '../../contexts/videoContext';
+import play from "../../images/play-button3.svg";
 
 const Singlepage = () => {
     const [videoData, setVideoData] = useState()
     const [isLoad, setIsLoad] = useState(false)
-
+    const { allVideos } = useGlobalVideos()
     const { id } = useParams()
 
     const getVideo = async () => {
@@ -40,7 +42,7 @@ const Singlepage = () => {
                     <div className="mainsinglepage">
                         <div className="left-singlepage">
                             <div className="left-singlepage-video">
-                                <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe width="950" height="450" src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 <h1> {videoData?.title}</h1>
                                 <p>{videoData?.creator}</p>
 
@@ -50,11 +52,6 @@ const Singlepage = () => {
                                     <button className='btn1'>save</button>
                                 </div>
 
-
-                                {/* <div className="iframe">
-                            <iframe width="560" height="215" src={`https://www.youtube.com/embed/${videoData._id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div> */}
-
                             </div>
                             <div className="left-singlepage-comments">
 
@@ -63,9 +60,27 @@ const Singlepage = () => {
                         </div>
                         <div className="right-singlepage">
                             <h2>Suggest Video</h2>
-                            <div className="suggest-video">
 
+                            <div className="suggest-video">
+                                {allVideos.map((video) =>
+                                    <div className="suggest-video-video-card">
+                                        <a href={video.videoLink}>
+                                            <div className=" thumbnail">
+                                                <img src={video.image} alt="" style={{ width: '100%' }} />
+                                                <div className="thumbnail-img">
+                                                    <img className="play" src={play} alt="" />
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div className="video-description">
+                                            <h3>{video.title}</h3>
+                                            <p>{video.creator}</p>
+                                            {video.videoLink && <a href={video.videoLink}></a>}
+                                        </div>
+                                    </div >
+                                )}
                             </div>
+
                             <div className="suggest-discription">
 
                             </div>

@@ -2,73 +2,104 @@
     display: flex;
     min-height: 900px;
     width: 100vw;
-    /* background-color: blue; */
+
 }
 
-.left-singlepage img {
+/* .left-singlepage {
+    top: 0px;
+    position: sticky;
+} */
+
+.left-singlepage-video {
+    position: sticky;
+    top: 0px;
+
+}
+
+iframe {
+    position: sticky;
+}
+
+/* .left-singlepage img {
     background-color: blue;
     min-height: 450px;
     width: 950px;
-}
-
-.left-singlepage-video {
-    height: 550px;
-    background-color: cadetblue;
-}
-
-.left-singlepage-video img {
-    height: 450px;
-    width: 950px;
-}
-
-/* .iframe {
-    height: 400px;
-    width: 924px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aqua;
 } */
+
+/* .left-singlepage-video {
+    height: 570px;
+    background-color: cadetblue;
+} */
+
+/* .left-singlepage-video img {
+    height: 450px;
+    width: 70%;
+} */
+
 .left-singlepage-comments {
     height: 450px;
     background-color: crimson;
 }
 
-.like-btn {
-    /* padding: 10px; */
-    padding-left: 10px;
-    gap: 10px;
-}
-
-.like-btn.btn1 {
-    padding: 10px;
+.like-btn button {
+    height: 35px;
+    width: 60px;
+    padding: 5px;
+    margin: 10px;
+    background-color: red;
+    border: none;
+    outline: none;
+    border: 1px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 5px;
 }
 
 .right-singlepage {
-    min-height: 900px;
-    width: 420px;
-    background-color: blueviolet;
+    min-height: 1775rem;
+    width: 30%;
+    background-color: blue;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+
+
+}
+
+/* 
+.thumbnail-img {
+    height: 250px;
+    width: 280px;
+} */
+
+.suggest-video-video-card {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .suggest-video {
     height: 180px;
     width: 380px;
-    background-color: brown;
+    display: flex;
+    flex-direction: column;
 }
 
-.suggest-discription {
-    height: 180px;
+/* .suggest-img {
+    height: 100px;
     width: 380px;
-    background-color: chocolate;
-}
+} */
+
+/* .suggest-content {
+    height: 180px;
+    width: 320px;
+
+} */
 
 .loading {
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
+
 }

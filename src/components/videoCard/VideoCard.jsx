@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { AiFillPlayCircle } from 'react-icons/ai'
+// import { AiFillPlayCircle } from 'react-icons/ai'
 import './VideoCard.css'
 import play from '../../images/play-button3.svg'
-import { Audio } from 'react-loader-spinner'
+// import { Audio } from 'react-loader-spinner'
 
 const VideoCard = ({ video }) => {
     const [image, setImage] = useState(video.image)
@@ -26,4 +26,4 @@ const VideoCard = ({ video }) => {
     )
 }
 
-export default VideoCard
+export default VideoCard;
