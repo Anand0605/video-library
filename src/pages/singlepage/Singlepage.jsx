@@ -42,7 +42,7 @@ const Singlepage = () => {
                     <div className="mainsinglepage">
                         <div className="left-singlepage">
                             <div className="left-singlepage-video">
-                                <iframe width="950" height="450" src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe width="950" height="460" src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 <h1> {videoData?.title}</h1>
                                 <p>{videoData?.creator}</p>
 
@@ -61,7 +61,7 @@ const Singlepage = () => {
                         <div className="right-singlepage">
                             <h2>Suggest Video</h2>
 
-                            <div className="suggest-video">
+                            {/* <div className="suggest-video">
                                 {allVideos.map((video) =>
                                     <div className="suggest-video-video-card">
                                         <a href={video.videoLink}>
@@ -75,11 +75,12 @@ const Singlepage = () => {
                                         <div className="video-description">
                                             <h3>{video.title}</h3>
                                             <p>{video.creator}</p>
+                                            <p>{video.description}</p>
                                             {video.videoLink && <a href={video.videoLink}></a>}
                                         </div>
                                     </div >
                                 )}
-                            </div>
+                            </div> */}
 
                             <div className="suggest-discription">
 
