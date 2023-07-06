@@ -19,8 +19,11 @@ function Nav() {
         <nav>
             <div className="Nav">
                 <div className="leftnav">
-                    {/* <img src={Navlogo} alt="" /> */}
+                    <img src={Navlogo} alt="" />
                     {/* <DehazeIcon /> */}
+                    <div className="like">like</div>
+                    <div className="share">share</div>
+                    <div className="save">save</div>
                 </div>
                 <div className="rightnav">
                     <ul>

@@ -13,6 +13,46 @@
     /* background-color: #7ee8fa; */
     color: aliceblue;
     padding-left: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.like {
+    height: 40px;
+    width: 60px;
+    background-color: #13274F;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.share {
+    height: 40px;
+    width: 60px;
+    background-color: #13274F;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.save {
+    height: 40px;
+    width: 60px;
+    background-color: #13274F;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
 }
 
 .leftnav img {

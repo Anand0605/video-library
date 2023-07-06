@@ -33,6 +33,22 @@
 
 }
 
+.fname input {
+    padding-left: 35px;
+}
+
+.last input {
+    padding-left: 35px;
+}
+
+.email input {
+    padding-left: 35px;
+}
+
+.sign-password input {
+    padding-left: 35px;
+}
+
 .signup-btn-1 button {
     height: 30px;
     width: 130px;

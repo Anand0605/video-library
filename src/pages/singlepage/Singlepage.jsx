@@ -4,6 +4,11 @@ import { useParams } from 'react-router-dom';
 import loading from '../../images/1487.gif'
 import { useGlobalVideos } from '../../contexts/videoContext';
 import play from "../../images/play-button3.svg";
+import Anandk from '../../images/Anand_Gautam.jpg'
+import Input from '@mui/material/Input';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 
 const Singlepage = () => {
     const [videoData, setVideoData] = useState()
@@ -42,18 +47,88 @@ const Singlepage = () => {
                     <div className="mainsinglepage">
                         <div className="left-singlepage">
                             <div className="left-singlepage-video">
-                                <iframe width="950" height="460" src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <div className="iframe">
+                                    <iframe width="980px" height="460" src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
                                 <h1> {videoData?.title}</h1>
                                 <p>{videoData?.creator}</p>
 
                                 <div className="like-btn">
-                                    <button className='btn1'>like</button>
-                                    <button className='btn1'>share</button>
-                                    <button className='btn1'>save</button>
+                                    <button className='btn1'><FavoriteIcon />Like</button>
+                                    <button className='btn1'><ShareIcon />share</button>
+                                    <button className='btn1'><LibraryAddIcon />save</button>
                                 </div>
 
                             </div>
+                            <hr />
                             <div className="left-singlepage-comments">
+                                <h2>Comments</h2>
+                                <img src={Anandk} alt="" />
+                                <Input placeholder="Add to Comments" />
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>❤️❤️❤️❤️❤️🔥🔥👌👌Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>👌👌👌👌👌Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>👍👍👍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>🔥🔥🔥🔥Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>❤️❤️❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>❤️🔥🔥👍👍👍👍👍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>😒😒😍😍😍😍😍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>😃😃😃😃😃😃Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>😒😒😒😒😒😒❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="another">
+                                    <img src={Anandk} alt="" />
+                                    <h3>@gautam0510</h3>
+                                </div>
+                                <p>😎😎😎😎😎😎😎😎😁😁😁😁😁😁😁😁Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+
+
+
+
 
 
                             </div>
@@ -61,7 +136,7 @@ const Singlepage = () => {
                         <div className="right-singlepage">
                             <h2>Suggest Video</h2>
 
-                            {/* <div className="suggest-video">
+                            <div className="suggest-video">
                                 {allVideos.map((video) =>
                                     <div className="suggest-video-video-card">
                                         <a href={video.videoLink}>
@@ -80,7 +155,7 @@ const Singlepage = () => {
                                         </div>
                                     </div >
                                 )}
-                            </div> */}
+                            </div>
 
                             <div className="suggest-discription">
 

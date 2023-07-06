@@ -45,6 +45,10 @@
     width: 20px;
 }
 
+input {
+    padding-left: 30px;
+}
+
 .password-input {
     position: relative;
 }
@@ -60,10 +64,6 @@
     top: -15px;
 }
 
-/* .faicon {
-    background-color: black;
-} */
-
 .input-username input {
     height: 40px;
     width: 240px;
@@ -72,9 +72,9 @@
 
 }
 
-::placeholder {
-    padding-left: 30px;
-}
+/* ::placeholder {
+    padding-left: 5px;
+} */
 
 .login-btn button {
     height: 40px;
