@@ -13,6 +13,8 @@ import Likedvideo from './pages/menu/likedvideo/Likedvideo';
 import History from './pages/menu/history/History';
 import Trending from './pages/menu/trending/Trending';
 import Mockman from "mockman-js";
+import Like from './pages/like/Like'
+import Videosave from './pages/videosave/Videosave'
 // import { useGlobal } from '../../../contexts/authContext/';
 import Singlepage from "./pages/singlepage/Singlepage";
 
@@ -36,6 +38,8 @@ function App() {
         <Route path='/trending' element={<Trending />} />
         <Route path='/mockman' element={<Mockman />} />
         <Route path='/single/:id' element={<Singlepage />} />
+        <Route path='/like' element={<Like />} />
+        <Route path='/Videosave' element={<Videosave />} />
       </Routes>
     </>
   );

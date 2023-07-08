@@ -21,9 +21,9 @@ function Nav() {
                 <div className="leftnav">
                     <img src={Navlogo} alt="" />
                     {/* <DehazeIcon /> */}
-                    <div className="like">like</div>
-                    <div className="share">share</div>
-                    <div className="save">save</div>
+                    <Link to='/like'><div className="like">like</div></Link>
+                    <Link to='/share'><div className="share">share</div></Link>
+                    <Link to='/Videosave'><div className="save">save</div></Link>
                 </div>
                 <div className="rightnav">
                     <ul>

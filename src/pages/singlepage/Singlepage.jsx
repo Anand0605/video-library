@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './singlepage.css'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import loading from '../../images/1487.gif'
 import { useGlobalVideos } from '../../contexts/videoContext';
 import play from "../../images/play-button3.svg";
@@ -10,7 +10,11 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 
+
+
 const Singlepage = () => {
+    const { postLikedVideo } = useGlobalVideos()
+
     const [videoData, setVideoData] = useState()
     const [isLoad, setIsLoad] = useState(false)
     const { allVideos } = useGlobalVideos()
@@ -54,9 +58,9 @@ const Singlepage = () => {
                                 <p>{videoData?.creator}</p>
 
                                 <div className="like-btn">
-                                    <button className='btn1'><FavoriteIcon />Like</button>
+                                    <button className='btn1' onClick={(() => postLikedVideo(videoData))}><FavoriteIcon />Like</button>
                                     <button className='btn1'><ShareIcon />share</button>
-                                    <button className='btn1'><LibraryAddIcon />save</button>
+                                    <Link to='/Videosave'><button className='btn1'><LibraryAddIcon />save</button></Link>
                                 </div>
 
                             </div>
