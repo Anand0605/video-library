@@ -7,7 +7,8 @@ const VideoProvider = ({ children }) => {
 
     const [allVideos, setAllVidoes] = useState([])
     const [likedData, setLikedData] = useState([])
-    const [deleteData, setDeleteData] = useState([])
+    // const [deleteData, setDeleteData] = useState([])
+    // const [watchData, setWatchData] = useState([])
 
 
     const fetchVideos = async () => {
@@ -29,34 +30,49 @@ const VideoProvider = ({ children }) => {
             setLikedData(data.likes)
             // console.log(likedData)
 
-
         } catch (err) {
             console.log(err)
         }
     }
+
+
     /*dislikedVideo*/
-    const deleteVideo = async (video) => {
+    // const deleteVideo = async (videoId) => {
+    //     const encodedToken = localStorage.getItem("userToken")
+    //     try {
+    //         const { data } = await axios.delete(`/api/user/likes/:videoId`, { video: video }, { headers: { authorization: encodedToken }, })
+    //         console.log(data.videoId)
+    //         setLikedData(data.videoId)
+    //         // console.log(deleteData)
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+
+    /*watchalter*/
+    const watchLaterVideo = async (video) => {
         const encodedToken = localStorage.getItem("userToken")
         try {
-            const { data } = await axios.delete('/api/user/likes/:videoId', { video: video }, { headers: { authorization: encodedToken }, })
-            console.log(data.videoId)
-            setLikedData(data.videoId)
-            console.log(deleteData)
+            const { data } = await axios.post('/api/user/watchlater', { video: video }, { headers: { authorization: encodedToken }, })
+            console.log(data.watchlater)
+            setLikedData(data.watchlater)
+            console.log(likedData)
+
         } catch (err) {
             console.log(err)
         }
     }
-
 
     useEffect(() => {
         fetchVideos()
+
 
     }, [])
 
 
 
     return (
-        <videoContext.Provider value={{ deleteVideo, deleteData, likedData, allVideos, postLikedVideo }}>
+        <videoContext.Provider value={{ likedData, allVideos, postLikedVideo }}>
             {children}
         </videoContext.Provider>
     )
