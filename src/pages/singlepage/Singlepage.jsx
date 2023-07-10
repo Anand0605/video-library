@@ -13,11 +13,11 @@ import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 
 
 const Singlepage = () => {
-    const { postLikedVideo } = useGlobalVideos()
+    const { postLikedVideo, watchLaterVideo } = useGlobalVideos()
 
     const [videoData, setVideoData] = useState()
     const [isLoad, setIsLoad] = useState(false)
-    const { allVideos } = useGlobalVideos()
+    const { allVideos, likedData, deleteVideo } = useGlobalVideos()
     const { id } = useParams()
 
     const getVideo = async () => {
@@ -58,9 +58,9 @@ const Singlepage = () => {
                                 <p>{videoData?.creator}</p>
 
                                 <div className="like-btn">
-                                    <button className='btn1' onClick={(() => postLikedVideo(videoData))}><FavoriteIcon />Like</button>
+                                    <button className='btn1' onClick={(() => likedData.find((item) => item._id === videoData._id) ? deleteVideo(videoData.videoId) : postLikedVideo(videoData))}><FavoriteIcon />Like</button>
                                     <button className='btn1'><ShareIcon />share</button>
-                                    <Link to='/Videosave'><button className='btn1'><LibraryAddIcon />save</button></Link>
+                                    <Link to='/Videosave' onClick={(() => watchLaterVideo(videoData))}><button className='btn1'><LibraryAddIcon />save</button></Link>
                                 </div>
 
                             </div>
@@ -146,9 +146,6 @@ const Singlepage = () => {
                                         <a href={video.videoLink}>
                                             <div className=" thumbnail">
                                                 <img src={video.image} alt="" style={{ width: '100%' }} />
-                                                <div className="thumbnail-img">
-                                                    <img className="play" src={play} alt="" />
-                                                </div>
                                             </div>
                                         </a>
                                         <div className="video-description">
@@ -165,7 +162,7 @@ const Singlepage = () => {
 
                             </div>
                         </div>
-                    </div>
+                    </div >
             }
 
         </>

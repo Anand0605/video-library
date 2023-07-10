@@ -8,7 +8,7 @@ const VideoProvider = ({ children }) => {
     const [allVideos, setAllVidoes] = useState([])
     const [likedData, setLikedData] = useState([])
     // const [deleteData, setDeleteData] = useState([])
-    // const [watchData, setWatchData] = useState([])
+    const [watchData, setWatchData] = useState([])
 
 
     const fetchVideos = async () => {
@@ -21,7 +21,18 @@ const VideoProvider = ({ children }) => {
         }
     }
     /* likedVideo */
+    const getAllLikesData = async () => {
+        const encodedToken = localStorage.getItem("userToken")
+        try {
+            const { data } = await axios.get('/api/user/likes', { headers: { authorization: encodedToken }, })
+            setLikedData(data.likes)
+            console.log(data.likes)
 
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
     const postLikedVideo = async (video) => {
         const encodedToken = localStorage.getItem("userToken")
         try {
@@ -37,17 +48,17 @@ const VideoProvider = ({ children }) => {
 
 
     /*dislikedVideo*/
-    // const deleteVideo = async (videoId) => {
-    //     const encodedToken = localStorage.getItem("userToken")
-    //     try {
-    //         const { data } = await axios.delete(`/api/user/likes/:videoId`, { video: video }, { headers: { authorization: encodedToken }, })
-    //         console.log(data.videoId)
-    //         setLikedData(data.videoId)
-    //         // console.log(deleteData)
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
+    const deleteVideo = async (videoId) => {
+        const encodedToken = localStorage.getItem("userToken")
+        try {
+            const { data } = await axios.delete(`/api/user/likes/${videoId}`, { headers: { authorization: encodedToken }, })
+            console.log(data)
+            getAllLikesData()
+            // console.log(deleteData)
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     /*watchalter*/
     const watchLaterVideo = async (video) => {
@@ -55,8 +66,8 @@ const VideoProvider = ({ children }) => {
         try {
             const { data } = await axios.post('/api/user/watchlater', { video: video }, { headers: { authorization: encodedToken }, })
             console.log(data.watchlater)
-            setLikedData(data.watchlater)
-            console.log(likedData)
+            setWatchData(data.watchlater)
+            console.log(watchData)
 
         } catch (err) {
             console.log(err)
@@ -66,13 +77,12 @@ const VideoProvider = ({ children }) => {
     useEffect(() => {
         fetchVideos()
 
-
     }, [])
 
 
 
     return (
-        <videoContext.Provider value={{ likedData, allVideos, postLikedVideo }}>
+        <videoContext.Provider value={{ deleteVideo, watchLaterVideo, watchData, likedData, allVideos, postLikedVideo }}>
             {children}
         </videoContext.Provider>
     )

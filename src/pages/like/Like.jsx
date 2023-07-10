@@ -8,7 +8,7 @@ import { useGlobalVideos } from '../../contexts/videoContext';
 
 const Like = () => {
     const { likedData } = useGlobalVideos();
-    console.log(likedData)
+    // console.log(likedData)
 
 
     return (
