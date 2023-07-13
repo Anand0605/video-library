@@ -17,6 +17,7 @@ import Like from './pages/like/Like'
 import Videosave from './pages/videosave/Videosave'
 // import { useGlobal } from '../../../contexts/authContext/';
 import Singlepage from "./pages/singlepage/Singlepage";
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path='/like' element={<Like />} />
         <Route path='/Videosave' element={<Videosave />} />
       </Routes>
+      <ToastContainer />
     </>
   );
 }

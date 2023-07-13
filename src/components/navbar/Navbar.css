@@ -22,8 +22,9 @@
 .like {
     height: 40px;
     width: 60px;
-    background-color: #13274F;
-    color: black;
+    background-color: #191970;
+    /* color: #13274F; */
+    /* color: black; */
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -34,8 +35,9 @@
 .share {
     height: 40px;
     width: 60px;
-    background-color: #13274F;
-    color: black;
+    background-color: #191970;
+    /* color: black; */
+    color: #13274F;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -46,8 +48,9 @@
 .save {
     height: 40px;
     width: 60px;
-    background-color: #13274F;
-    color: black;
+    background-color: #191970;
+    /* color: black; */
+    color: #13274F;
     border-radius: 10px;
     display: flex;
     justify-content: center;

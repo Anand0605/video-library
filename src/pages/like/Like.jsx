@@ -1,13 +1,13 @@
 import React from 'react'
 import './Like.css'
-import { useState } from 'react'
-import { useEffect } from 'react';
+// import { useState } from 'react'
+// import { useEffect } from 'react';
 import { useGlobalVideos } from '../../contexts/videoContext';
 
 
 
 const Like = () => {
-    const { likedData } = useGlobalVideos();
+    const { likedData, } = useGlobalVideos();
     // console.log(likedData)
 
 

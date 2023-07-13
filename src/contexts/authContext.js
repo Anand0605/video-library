@@ -1,9 +1,26 @@
 import React, { createContext, useContext, useEffect, useState, } from "react";
 // import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const authContext = createContext();
 
 const AuthProvider = ({ children }) => {
+    const toastify = {
+        position: "top-right",
+        autoClose: 800,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    };
+
+    const notifyInfo = (content) => toast.info(content, toastify);
+    const notifySuccess = (content) => toast.success(content, toastify);
+    const notifyWarn = (content) => toast.warn(content, toastify);
+    const notifyError = (content) => toast.error(content, toastify);
 
     const [loginInput, setLoginInput] = useState({
         email: '',
@@ -147,7 +164,7 @@ const AuthProvider = ({ children }) => {
         setCreatedUser({});
     };
     return (
-        <authContext.Provider value={{ loginFunction, logouthandler, userToken, dummyLogin, setLoginInput, signupFunction, signuplogin, setSignupInput, signuplogouthandler }}>
+        <authContext.Provider value={{ notifyInfo, notifySuccess, loginFunction, logouthandler, userToken, dummyLogin, setLoginInput, signupFunction, signuplogin, setSignupInput, signuplogouthandler }}>
             {children}
         </authContext.Provider>
 

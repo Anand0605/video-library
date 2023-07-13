@@ -3,12 +3,14 @@ import './singlepage.css'
 import { Link, useParams } from 'react-router-dom';
 import loading from '../../images/1487.gif'
 import { useGlobalVideos } from '../../contexts/videoContext';
-import play from "../../images/play-button3.svg";
+// import play from "../../images/play-button3.svg";
 import Anandk from '../../images/Anand_Gautam.jpg'
 import Input from '@mui/material/Input';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { AiFillHeart } from 'react-icons/ai';
 import ShareIcon from '@mui/icons-material/Share';
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+
 
 
 
@@ -20,7 +22,13 @@ const Singlepage = () => {
     const { allVideos, likedData, deleteVideo } = useGlobalVideos()
     const { id } = useParams()
 
+
+
+
+
     const getVideo = async () => {
+
+
         setIsLoad(true)
         try {
             const res = await fetch(`/api/video/${id}`)
@@ -40,6 +48,10 @@ const Singlepage = () => {
     // console.log(videoData)
     // console.log(videoData?.videoLink)
 
+    const isInLike = (id) => {
+        return likedData.some((item) => item._id === videoData._id)
+    }
+
 
     return (
         <>
@@ -58,9 +70,15 @@ const Singlepage = () => {
                                 <p>{videoData?.creator}</p>
 
                                 <div className="like-btn">
-                                    <button className='btn1' onClick={(() => likedData.find((item) => item._id === videoData._id) ? deleteVideo(videoData.videoId) : postLikedVideo(videoData))}><FavoriteIcon />Like</button>
-                                    <button className='btn1'><ShareIcon />share</button>
-                                    <Link to='/Videosave' onClick={(() => watchLaterVideo(videoData))}><button className='btn1'><LibraryAddIcon />save</button></Link>
+                                    <button className='btn1' onClick={(() => isInLike(videoData._id) ? deleteVideo(videoData._id) : postLikedVideo(videoData))}>
+                                        {
+                                            isInLike(videoData?._id) ?
+                                                <><AiFillHeart className='liked-icon' /></> :
+                                                <><FavoriteIcon /></>
+                                        }
+                                    </button>
+                                    <button className='btn1'><ShareIcon /></button>
+                                    <Link to='/Videosave' onClick={(() => watchLaterVideo(videoData))}><button className='btn1'><LibraryAddIcon /></button></Link>
                                 </div>
 
                             </div>
@@ -143,17 +161,18 @@ const Singlepage = () => {
                             <div className="suggest-video">
                                 {allVideos.map((video) =>
                                     <div className="suggest-video-video-card">
-                                        <a href={video.videoLink}>
-                                            <div className=" thumbnail">
-                                                <img src={video.image} alt="" style={{ width: '100%' }} />
-                                            </div>
-                                        </a>
+
+                                        <div className=" thumbnail">
+                                            <img src={video.image} alt="" style={{ width: '100%' }} />
+                                        </div>
+
                                         <div className="video-description">
                                             <h3>{video.title}</h3>
                                             <p>{video.creator}</p>
                                             <p>{video.description}</p>
-                                            {video.videoLink && <a href={video.videoLink}></a>}
                                         </div>
+
+
                                     </div >
                                 )}
                             </div>

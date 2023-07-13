@@ -1,9 +1,11 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { useGlobalAuth } from "./authContext";
 
 const videoContext = createContext()
 
 const VideoProvider = ({ children }) => {
+    const { notifyWarn, notifySuccess } = useGlobalAuth()
 
     const [allVideos, setAllVidoes] = useState([])
     const [likedData, setLikedData] = useState([])
@@ -37,8 +39,9 @@ const VideoProvider = ({ children }) => {
         const encodedToken = localStorage.getItem("userToken")
         try {
             const { data } = await axios.post('/api/user/likes', { video: video }, { headers: { authorization: encodedToken }, })
-            console.log(data.likes)
+            console.log("likesd", data)
             setLikedData(data.likes)
+            notifySuccess('Video Liked')
             // console.log(likedData)
 
         } catch (err) {
@@ -52,9 +55,9 @@ const VideoProvider = ({ children }) => {
         const encodedToken = localStorage.getItem("userToken")
         try {
             const { data } = await axios.delete(`/api/user/likes/${videoId}`, { headers: { authorization: encodedToken }, })
-            console.log(data)
-            getAllLikesData()
-            // console.log(deleteData)
+            console.log("dislike", data)
+            setLikedData(data.likes)
+            notifySuccess('Video Disliked')
         } catch (err) {
             console.log(err)
         }

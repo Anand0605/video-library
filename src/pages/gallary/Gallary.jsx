@@ -10,7 +10,7 @@ const Gallary = () => {
 
     const { allVideos, singleVideo } = useGlobalVideos()
 
-    const [searchInput, setSearchInput] = useState();
+    const [searchInput, setSearchInput] = useState('');
 
     let searchData = allVideos?.filter(({ title }) =>
         title?.includes(searchInput)
