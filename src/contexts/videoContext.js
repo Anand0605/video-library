@@ -76,6 +76,19 @@ const VideoProvider = ({ children }) => {
             console.log(err)
         }
     }
+    /* Delete watchLater*/
+    // const deleteWatch = async (videoId) => {
+    //     const encodedToken = localStorage.getItem("userToken")
+    //     try {
+    //         const { data } = await axios.delete(`/api/user/watchlater/${videoId}`, { headers: { authorization: encodedToken }, })
+    //         console.log("delete", data)
+    //         setWatchData(data.watchlater)
+    //         notifySuccess('Video Disliked')
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+
 
     useEffect(() => {
         fetchVideos()

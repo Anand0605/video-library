@@ -4,11 +4,18 @@
     box-sizing: border-box;
 }
 
-/* .main-videosave-page {
-    background-color: red;
-} */
+.main-videosave-page {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
 .watch-data img {
-    height: 150px;
-    width: 150px;
+    height: 70%;
+    width: 100%;
+}
+
+.watch-data {
+    width: 25%;
 }

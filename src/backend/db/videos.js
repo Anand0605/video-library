@@ -65,7 +65,7 @@ export const videos = [
     videoId: "M3XPsovV4yg",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium ",
     creator: "Anand Kumar Gautam",
-    image: "https://cricket.upcomingwiki.com/public/images/gallery/90653.png",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToHaSQWf9Wgc1zKTfEkq49jjab34rsu_ctBZvzRpb3L4NtWXewkYOPtcyepL3MR_HuqcE&usqp=CAU",
     id: "7"
   },
   {

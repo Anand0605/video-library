@@ -24,6 +24,7 @@ function Nav() {
                     <Link to='/like'><div className="like">like</div></Link>
                     <Link to='/share'><div className="share">share</div></Link>
                     <Link to='/Videosave'><div className="save">save</div></Link>
+                    <div className="history">History</div>
                 </div>
                 <div className="rightnav">
                     <ul>

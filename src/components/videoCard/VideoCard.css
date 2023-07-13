@@ -3,7 +3,8 @@
     width: 400px;
     border-radius: 10px;
     /* cursor: pointer; */
-    background-color: #392ced;
+    background-color: #003151;
+    /* padding: 15px; */
 
 }
 
@@ -50,4 +51,10 @@
     /* color: aliceblue; */
     color: rgb(255, 255, 255);
     padding: 10px;
+}
+
+@media only screen and (max-width: 670px) {
+    .video-card {
+        padding: 15px;
+    }
 }

@@ -2,8 +2,7 @@
 
 .main-page {
     height: 600px;
-    width: 1361px;
-    /* width: 200vw; */
+    width: 100vw;
     background-image: url(https://r4.wallpaperflare.com/wallpaper/615/654/332/team-india-national-cricket-team-indian-cricket-team-ms-dhoni-wallpaper-e9ef2eb3092bc27895e41288dac172cd.jpg);
     background-size: 100% 100%;
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
@@ -35,7 +34,8 @@
 }
 
 .heading {
-    width: 1360px;
+    /* width: 1360px; */
+    width: 100vw;
     padding: 20px;
     background-color: #003151;
     color: aliceblue;
@@ -46,23 +46,32 @@
     justify-content: space-around;
     align-items: center;
     min-height: 500px;
-    width: 1360px;
+    padding: 20px;
+    width: 100vw;
     flex-wrap: wrap;
     gap: 20px;
     background-color: #003151;
 }
 
-.players {
+/* .players {
     flex-wrap: wrap;
-}
+} */
 
 .gallery1 {
     height: 400px;
     width: 300px;
     background-image: url(https://e0.pxfuel.com/wallpapers/606/899/desktop-wallpaper-ms-dhoni-7-looking-at-sky-drawing-ms-dhoni-dhoni-best-for-mobile-thumbnail.jpg);
     background-size: 100% 100%;
+    transition: transform 2s;
 
 
+
+}
+
+.gallery1:hover {
+    transform: scale(1.1);
+    transform: scale(1.1);
+    transform: scale(1.1);
 
 }
 
@@ -117,6 +126,13 @@
     transition: transform 2s;
 }
 
+.gallery4:hover {
+    transform: scale(1.1);
+    transform: scale(1.1);
+    transform: scale(1.1);
+
+}
+
 .gallery5 {
     /* border: 2px solid greenyellow; */
     height: 400px;
@@ -124,6 +140,13 @@
     background-image: url(https://img.mensxp.com/media/content/2021/Dec/Mithali-Raj-1_61a9c3acbff0f.jpeg);
     background-size: 100% 100%;
     transition: transform 2s;
+}
+
+.gallery5:hover {
+    transform: scale(1.1);
+    transform: scale(1.1);
+    transform: scale(1.1);
+
 }
 
 .gallery6 {
@@ -135,6 +158,13 @@
     transition: transform 2s;
 }
 
+.gallery6:hover {
+    transform: scale(1.1);
+    transform: scale(1.1);
+    transform: scale(1.1);
+
+}
+
 .gallery7 {
     /* border: 2px solid greenyellow; */
     height: 400px;
@@ -142,6 +172,13 @@
     background-image: url(https://im.indiatimes.in/content/2023/Mar/harmanpreet-kaur_640c57a519afb.jpg);
     background-size: 100% 100%;
     transition: transform 2s;
+}
+
+.gallery7:hover {
+    transform: scale(1.1);
+    transform: scale(1.1);
+    transform: scale(1.1);
+
 }
 
 .gallery8 {
@@ -153,16 +190,30 @@
     transition: transform 2s;
 }
 
+.gallery8:hover {
+    transform: scale(1.1);
+    transform: scale(1.1);
+    transform: scale(1.1);
+
+}
+
 @media only screen and (max-width: 600px) {
     .main-page {
         width: 390px;
         height: 400px;
 
     }
+
+    .main-page {
+        background-image: url(https://w0.peakpx.com/wallpaper/837/919/HD-wallpaper-ms-dhoni-msd-thumbnail.jpg);
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 345px) {
-    .player-deatils {
+@media only screen and (max-width: 670px) {
+    .players.player-deatils {
+        display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
     }
 

@@ -1,0 +1,63 @@
+.playlist {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.375);
+}
+
+.playlist-item {
+    height: 38%;
+    width: 25%;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    gap: 60px;
+
+}
+
+.icon-cancel {
+    position: absolute;
+    top: 10px;
+    left: 305px;
+}
+
+.check {
+    position: relative;
+    padding: 10px;
+
+}
+
+.checkbox {
+    position: absolute;
+    left: 20px;
+    bottom: 13px;
+    height: 15px;
+    width: 15px;
+}
+
+label {
+    padding-left: 70px;
+}
+
+.add-playlist {
+    position: absolute;
+    bottom: 50px;
+    left: 94px;
+    height: 30px;
+    width: 150px;
+    background-color: #003151;
+    color: aliceblue;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+
+}

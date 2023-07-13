@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './singlepage.css'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import loading from '../../images/1487.gif'
 import { useGlobalVideos } from '../../contexts/videoContext';
 // import play from "../../images/play-button3.svg";
@@ -10,17 +10,20 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { AiFillHeart } from 'react-icons/ai';
 import ShareIcon from '@mui/icons-material/Share';
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import Playlist from '../playlist/Playlist';
 
 
 
 
 const Singlepage = () => {
-    const { postLikedVideo, watchLaterVideo } = useGlobalVideos()
+    const { postLikedVideo, watchLaterVideo, } = useGlobalVideos()
 
     const [videoData, setVideoData] = useState()
     const [isLoad, setIsLoad] = useState(false)
-    const { allVideos, likedData, deleteVideo } = useGlobalVideos()
+    const [open, setOpen] = useState(false)
+    const { allVideos, likedData, deleteVideo, } = useGlobalVideos()
     const { id } = useParams()
+    const navigate = useNavigate()
 
 
 
@@ -44,13 +47,14 @@ const Singlepage = () => {
     }
     useEffect(() => {
         getVideo()
-    }, [])
+    }, [id])
     // console.log(videoData)
     // console.log(videoData?.videoLink)
 
     const isInLike = (id) => {
         return likedData.some((item) => item._id === videoData._id)
     }
+
 
 
     return (
@@ -64,7 +68,7 @@ const Singlepage = () => {
                         <div className="left-singlepage">
                             <div className="left-singlepage-video">
                                 <div className="iframe">
-                                    <iframe width="980px" height="460" src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe src={`https://www.youtube.com/embed/${videoData?.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                                 <h1> {videoData?.title}</h1>
                                 <p>{videoData?.creator}</p>
@@ -78,80 +82,83 @@ const Singlepage = () => {
                                         }
                                     </button>
                                     <button className='btn1'><ShareIcon /></button>
-                                    <Link to='/Videosave' onClick={(() => watchLaterVideo(videoData))}><button className='btn1'><LibraryAddIcon /></button></Link>
-                                </div>
+                                    <button className='btn1' onClick={() => setOpen(!open)}>
 
+
+                                        <LibraryAddIcon /></button>
+                                </div>
+                                {
+                                    open && <Playlist />
+                                }
                             </div>
                             <hr />
                             <div className="left-singlepage-comments">
                                 <h2>Comments</h2>
                                 <img src={Anandk} alt="" />
                                 <Input placeholder="Add to Comments" />
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>❤️❤️❤️❤️❤️🔥🔥👌👌Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>👌👌👌👌👌Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>👍👍👍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>🔥🔥🔥🔥Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>❤️❤️❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>❤️🔥🔥👍👍👍👍👍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>😒😒😍😍😍😍😍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>😃😃😃😃😃😃Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>😒😒😒😒😒😒❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
-                                <div className="another">
-                                    <img src={Anandk} alt="" />
-                                    <h3>@gautam0510</h3>
-                                </div>
-                                <p>😎😎😎😎😎😎😎😎😁😁😁😁😁😁😁😁Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                <div className="all-comment">
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>❤️❤️❤️❤️❤️🔥🔥👌👌Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>👌👌👌👌👌Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>👍👍👍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>🔥🔥🔥🔥Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>❤️❤️❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>❤️🔥🔥👍👍👍👍👍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>😒😒😍😍😍😍😍Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>😃😃😃😃😃😃Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>😒😒😒😒😒😒❤️❤️❤️Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
+                                    <div className="comment-account">
+                                        <img src={Anandk} alt="" />
+                                        <h3>@gautam0510</h3>
+                                    </div>
+                                    <p>😎😎😎😎😎😎😎😎😁😁😁😁😁😁😁😁Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maxime ipsam quod veniam perspiciatis provident odio iure officiis, earum sint.</p>
 
-
-
-
-
+                                </div>
 
                             </div>
                         </div>
@@ -160,12 +167,11 @@ const Singlepage = () => {
 
                             <div className="suggest-video">
                                 {allVideos.map((video) =>
-                                    <div className="suggest-video-video-card">
+                                    <div className="suggest-video-video-card" onClick={() => navigate(`/single/${video._id}`)}>
 
                                         <div className=" thumbnail">
                                             <img src={video.image} alt="" style={{ width: '100%' }} />
                                         </div>
-
                                         <div className="video-description">
                                             <h3>{video.title}</h3>
                                             <p>{video.creator}</p>
