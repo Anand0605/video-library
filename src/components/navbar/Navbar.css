@@ -235,4 +235,8 @@ nav {
     .menu-visible {
         right: 0;
     }
+
+    .history {
+        display: none;
+    }
 }

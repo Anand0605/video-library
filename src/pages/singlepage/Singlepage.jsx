@@ -16,7 +16,7 @@ import Playlist from '../playlist/Playlist';
 
 
 const Singlepage = () => {
-    const { postLikedVideo, watchLaterVideo, } = useGlobalVideos()
+    const { allHistory, postLikedVideo, watchLaterVideo, } = useGlobalVideos()
 
     const [videoData, setVideoData] = useState()
     const [isLoad, setIsLoad] = useState(false)
@@ -88,7 +88,7 @@ const Singlepage = () => {
                                         <LibraryAddIcon /></button>
                                 </div>
                                 {
-                                    open && <Playlist />
+                                    open && <Playlist setOpen={() => setOpen(false)} />
                                 }
                             </div>
                             <hr />

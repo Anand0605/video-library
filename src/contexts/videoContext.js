@@ -11,6 +11,7 @@ const VideoProvider = ({ children }) => {
     const [likedData, setLikedData] = useState([])
     // const [deleteData, setDeleteData] = useState([])
     const [watchData, setWatchData] = useState([])
+    const [history, setHistory] = useState([])
 
 
     const fetchVideos = async () => {
@@ -69,7 +70,7 @@ const VideoProvider = ({ children }) => {
         try {
             const { data } = await axios.post('/api/user/watchlater', { video: video }, { headers: { authorization: encodedToken }, })
             console.log(data.watchlater)
-            setWatchData(data.watchlater)
+            setHistory(data.watchlater)
             console.log(watchData)
 
         } catch (err) {
@@ -89,6 +90,19 @@ const VideoProvider = ({ children }) => {
     //     }
     // }
 
+    const allHistory = async (video) => {
+        const encodedToken = localStorage.getItem("userToken")
+        try {
+            const { data } = await axios.post('/api/user/history', { video: video }, { headers: { authorization: encodedToken }, })
+            console.log(data.history)
+            setWatchData(data.history)
+            // console.log(history)
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
 
     useEffect(() => {
         fetchVideos()
@@ -98,7 +112,7 @@ const VideoProvider = ({ children }) => {
 
 
     return (
-        <videoContext.Provider value={{ deleteVideo, watchLaterVideo, watchData, likedData, allVideos, postLikedVideo }}>
+        <videoContext.Provider value={{ allHistory, deleteVideo, watchLaterVideo, watchData, likedData, allVideos, postLikedVideo }}>
             {children}
         </videoContext.Provider>
     )

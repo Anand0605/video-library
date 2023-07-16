@@ -3,14 +3,16 @@ import './Playlist.css'
 import CancelIcon from '@mui/icons-material/Cancel';
 import { useState } from 'react';
 
-const Playlist = () => {
-    const [close, setClose] = useState(false)
+const Playlist = ({ setOpen }) => {
+    // const [close, setClose] = useState(false)
     return (
         <>
             <div className='playlist'>
-                <div className="playlist-item" onClick={() => setClose((prev) => !prev)}>
+                <div className="playlist-item">
                     <h2>Save To</h2>
-                    <CancelIcon className='icon-cancel' />
+                    <div className="cancel-icon" onClick={() => setOpen(false)}>
+                        <CancelIcon className='icon-cancel' />
+                    </div>
                     <div className="check">
                         <label htmlFor="">WatchLater</label>
                         <input className='checkbox' type="checkbox" id='watchlater' name='watchlater' value='watchlater' />
