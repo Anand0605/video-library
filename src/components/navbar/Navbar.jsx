@@ -58,7 +58,7 @@ function Nav() {
 
 
                         </li>
-                        <NavLink to="/premium"><button>Premium</button></NavLink>
+                        <NavLink to="/premium"><button className='primium'>Premium</button></NavLink>
 
                     </ul>
                     <div className="hamburger" onClick={() => setIsMenuVisible((prev) => !prev)}>
