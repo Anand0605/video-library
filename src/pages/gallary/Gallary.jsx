@@ -3,10 +3,12 @@ import { useGlobalVideos } from '../../contexts/videoContext'
 import Search from '../../components/search/Search'
 import VideoCard from '../../components/videoCard/VideoCard'
 import Footer from '../../components/footer/Footer'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 const Gallary = () => {
+    const { allHistory } = useGlobalVideos()
+    const navigate = useNavigate()
 
     const { allVideos, singleVideo } = useGlobalVideos()
 
@@ -22,7 +24,7 @@ const Gallary = () => {
             <div className="main">
                 {
                     searchData.map((video) => (
-                        <Link to={`/single/${video._id}`}><VideoCard video={video} /></Link>
+                        <VideoCard video={video} />
                     ))
                 }
             </div>

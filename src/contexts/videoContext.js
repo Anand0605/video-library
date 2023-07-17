@@ -70,7 +70,6 @@ const VideoProvider = ({ children }) => {
         try {
             const { data } = await axios.post('/api/user/watchlater', { video: video }, { headers: { authorization: encodedToken }, })
             console.log(data.watchlater)
-            setHistory(data.watchlater)
             console.log(watchData)
 
         } catch (err) {
@@ -95,7 +94,7 @@ const VideoProvider = ({ children }) => {
         try {
             const { data } = await axios.post('/api/user/history', { video: video }, { headers: { authorization: encodedToken }, })
             console.log(data.history)
-            setWatchData(data.history)
+            setHistory(data.history)
             // console.log(history)
 
         } catch (err) {
@@ -112,7 +111,7 @@ const VideoProvider = ({ children }) => {
 
 
     return (
-        <videoContext.Provider value={{ allHistory, deleteVideo, watchLaterVideo, watchData, likedData, allVideos, postLikedVideo }}>
+        <videoContext.Provider value={{ allHistory, history, deleteVideo, watchLaterVideo, watchData, likedData, allVideos, postLikedVideo }}>
             {children}
         </videoContext.Provider>
     )

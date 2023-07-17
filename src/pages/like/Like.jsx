@@ -7,7 +7,7 @@ import { useGlobalVideos } from '../../contexts/videoContext';
 
 
 const Like = () => {
-    const { likedData, } = useGlobalVideos();
+    const { likedData, deleteVideo } = useGlobalVideos();
     // console.log(likedData)
 
 
@@ -21,7 +21,7 @@ const Like = () => {
                                 <img src={video.image} alt="" />
                                 <p>{video.description}</p>
                                 <h2>{video.title}</h2>
-                                <button>Remove</button>
+                                <button onClick={() => deleteVideo(video._id)}>Remove</button>
                             </div>)
                     }
 

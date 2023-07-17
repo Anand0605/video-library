@@ -42,7 +42,7 @@ function App() {
         <Route path='/single/:id' element={<Singlepage />} />
         <Route path='/like' element={<Like />} />
         <Route path='/Videosave' element={<Videosave />} />
-        <Route path='/History' element={<History />} />
+        <Route path='/history' element={<History />} />
       </Routes>
       <ToastContainer />
     </>

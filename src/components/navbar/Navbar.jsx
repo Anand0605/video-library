@@ -5,13 +5,14 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 // import { useGlobalVideos } from '../../contexts/videoContext';
 import anand from '../../images/Anand_Gautam.jpg'
 import Navlogo from '../../images/cricket_logo.png'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { useGlobalAuth } from '../../contexts/authContext';
 import AccountMenu from '../account-menu/Accountmenu'
 // import DehazeIcon from '@mui/icons-material/Dehaze';
 
 function Nav() {
+    const navigate = useNavigate()
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const { loginFunction, logouthandler, userToken } = useGlobalAuth();
 
@@ -24,7 +25,7 @@ function Nav() {
                     <Link to='/like'><div className="like">like</div></Link>
                     {/* <Link to='/share'><div className="share">share</div></Link> */}
                     <Link to='/Videosave'><div className="save">save</div></Link>
-                    <div className="history">History</div>
+                    <div className="history" onClick={() => navigate('/history')}>History</div>
                 </div>
                 <div className="rightnav">
                     <ul>

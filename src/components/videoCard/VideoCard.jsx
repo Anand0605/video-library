@@ -2,13 +2,21 @@ import React, { useState } from 'react'
 // import { AiFillPlayCircle } from 'react-icons/ai'
 import './VideoCard.css'
 import play from '../../images/play-button3.svg'
+import { useGlobalVideos } from '../../contexts/videoContext'
+import { useNavigate } from 'react-router-dom'
 // import { Audio } from 'react-loader-spinner'
 
 const VideoCard = ({ video }) => {
-    const [image, setImage] = useState(video.image)
+    const { allHistory } = useGlobalVideos()
+    const navigate = useNavigate()
+    const videoHandler = (video) => {
+        navigate(`/single/${video._id}`)
+        allHistory(video)
+    }
+    // const [image, setImage] = useState(video.image)/
 
     return (
-        <div className="video-card">
+        <div className="video-card" onClick={() => videoHandler(video)}>
             <a href={video.videoLink}>
                 <div className="thumbnail">
                     <img src={video.image} alt="" />

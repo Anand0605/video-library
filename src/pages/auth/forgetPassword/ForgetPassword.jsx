@@ -1,5 +1,5 @@
 import React from 'react'
-import './Forgetpassword.css'
+import './ForgetPassword.css'
 import { Link } from 'react-router-dom'
 import Footer from '../../../components/footer/Footer'
 import { AiOutlineMail } from "react-icons/ai";
