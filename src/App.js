@@ -10,13 +10,11 @@ import ForgetPassword from './pages/auth/forgetPassword/ForgetPassword';
 import Premium from './pages/auth/premium/Premium';
 import Watchlater from './pages/menu/watchlater/Watchlater';
 import Likedvideo from './pages/menu/likedvideo/Likedvideo';
-// import History from './pages/menu/history/History';
 import Trending from './pages/menu/trending/Trending';
 import Mockman from "mockman-js";
 import Like from './pages/like/Like'
 import Videosave from './pages/videosave/Videosave'
 import History from './pages/history/History';
-// import { useGlobal } from '../../../contexts/authContext/';
 import Singlepage from "./pages/singlepage/Singlepage";
 import { ToastContainer } from 'react-toastify';
 

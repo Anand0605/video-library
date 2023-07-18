@@ -67,8 +67,8 @@ const AuthProvider = ({ children }) => {
             })
             const data = await res.json()
             console.log(data);
-            if (data.error) {
-                console.log(data.error)
+            if (data) {
+                console.log(data)
             }
             else {
                 localStorage.setItem("userToken", JSON.stringify(data.encodedToken));

@@ -46,7 +46,8 @@
 }
 
 input {
-    padding-left: 10px;
+    /* padding-left: 10px; */
+    /* padding-right: 80px; */
 }
 
 .password-input {
