@@ -45,9 +45,6 @@ const AuthProvider = ({ children }) => {
         if (token) {
             setUserToken(token);
             setUserDetails(JSON.parse(localStorage.getItem("foundUser")));
-
-            setCreatedUser(JSON.parse(localStorage.getItem("createdUser")))
-
         }
     }, []);
 
@@ -67,25 +64,30 @@ const AuthProvider = ({ children }) => {
             })
             const data = await res.json()
             console.log(data);
-            if (data) {
-                console.log(data)
-            }
-            else {
-                localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
-                localStorage.setItem("foundUser", JSON.stringify(data.foundUser));
-                setUserToken(data.encodedToken);
-                setUserDetails(data.foundUser);
-                setLoginInput({
-                    email: "",
-                    password: ""
-                })
-            }
+
+            localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
+            localStorage.setItem("foundUser", JSON.stringify(data.foundUser));
+            setUserToken(data.encodedToken);
+            setUserDetails(data.foundUser);
+            setLoginInput({
+                email: "",
+                password: ""
+            })
 
         }
         catch (err) {
             console.log(err)
         }
 
+    };
+
+    const dummyLogin = () => {
+        setLoginInput({
+            email: "gautam05102002@gmail.com",
+            password: "gautam123"
+        })
+        if (loginInput.email === "gautam05102002@gmail.com")
+            loginFunction()
     };
 
 
@@ -112,7 +114,7 @@ const AuthProvider = ({ children }) => {
             }
             else {
                 localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
-                localStorage.setItem("createdUser", JSON.stringify(data.createdUser));
+                localStorage.setItem("foundUser", JSON.stringify(data.createdUser));
                 setUserToken(data.encodedToken);
                 setCreatedUser(data.createdUser);
                 setSignupInput({
@@ -128,14 +130,6 @@ const AuthProvider = ({ children }) => {
             console.log(err)
         }
 
-    };
-    const dummyLogin = () => {
-        setLoginInput({
-            email: "gautam05102002@gmail.com",
-            password: "gautam123"
-        })
-        if (loginInput.email === "gautam05102002@gmail.com")
-            loginFunction()
     };
 
     const signuplogin = () => {
@@ -157,14 +151,8 @@ const AuthProvider = ({ children }) => {
         setUserDetails({});
     };
 
-    const signuplogouthandler = () => {
-        localStorage.removeItem("userToken");
-        localStorage.removeItem("createdUser");
-        setUserToken("");
-        setCreatedUser({});
-    };
     return (
-        <authContext.Provider value={{ notifyInfo, notifySuccess, loginFunction, logouthandler, userToken, dummyLogin, setLoginInput, signupFunction, signuplogin, setSignupInput, signuplogouthandler }}>
+        <authContext.Provider value={{ notifyInfo, notifySuccess, loginFunction, logouthandler, userToken, dummyLogin, setLoginInput, signupFunction, signuplogin, setSignupInput }}>
             {children}
         </authContext.Provider>
 

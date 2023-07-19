@@ -73,7 +73,7 @@ const Singlepage = () => {
                                 <h1> {videoData?.title}</h1>
                                 <p>{videoData?.creator}</p>
 
-                                <div className="like-btn">
+                                <div className="video-option-btn">
                                     <button className='btn1' onClick={(() => isInLike(videoData._id) ? deleteVideo(videoData._id) : postLikedVideo(videoData))}>
                                         {
                                             isInLike(videoData?._id) ?
@@ -83,8 +83,6 @@ const Singlepage = () => {
                                     </button>
                                     <button className='btn1'><ShareIcon /></button>
                                     <button className='btn1' onClick={() => setOpen(!open)}>
-
-
                                         <LibraryAddIcon /></button>
                                 </div>
                                 {
