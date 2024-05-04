@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './singlepage.css'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import {useNavigate, useParams } from 'react-router-dom';
 import loading from '../../images/1487.gif'
 import { useGlobalVideos } from '../../contexts/videoContext';
 // import play from "../../images/play-button3.svg";
@@ -16,7 +16,7 @@ import Playlist from '../playlist/Playlist';
 
 
 const Singlepage = () => {
-    const { allHistory, postLikedVideo, watchLaterVideo, } = useGlobalVideos()
+    const {postLikedVideo, } = useGlobalVideos()
 
     const [videoData, setVideoData] = useState()
     const [isLoad, setIsLoad] = useState(false)
@@ -46,7 +46,7 @@ const Singlepage = () => {
         }
     }
     useEffect(() => {
-        getVideo()
+        
     }, [id])
     // console.log(videoData)
     // console.log(videoData?.videoLink)
