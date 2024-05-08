@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, } from "react";
-// import { useNavigate } from "react-router-dom";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -22,37 +21,33 @@ const AuthProvider = ({ children }) => {
     const notifyWarn = (content) => toast.warn(content, toastify);
     const notifyError = (content) => toast.error(content, toastify);
 
-    const [loginInput, setLoginInput] = useState({
-        email: '',
-        password: ''
-    });
-
-    const [signupInput, setSignupInput] = useState({
-        fname: '',
-        lname: '',
-        email: '',
-        password: ''
-    })
+    const [loginInput, setLoginInput] = useState({ email: '', password: '' });
+    const [signupInput, setSignupInput] = useState({ fname: '', lname: '', email: '', password: '' });
     const [userToken, setUserToken] = useState("");
     const [userDetails, setUserDetails] = useState({});
-
-    const [createdUser, setCreatedUser] = useState({})
-
-
+    const [createdUser, setCreatedUser] = useState({});
 
     useEffect(() => {
         const token = localStorage.getItem("userToken");
-        if (token) {
+        const foundUser = localStorage.getItem("foundUser");
+    
+        if (token && foundUser) {
+            let parsedUser = {};
+            try {
+                parsedUser = JSON.parse(foundUser);
+            } catch (error) {
+                console.error("Error parsing foundUser JSON:", error);
+                // Handle the error, such as clearing localStorage or setting default user details
+            }
+    
             setUserToken(token);
-            setUserDetails(JSON.parse(localStorage.getItem("foundUser")));
+            setUserDetails(parsedUser);
         }
     }, []);
-
-    /*-------Login------*/
+    
+    
 
     const loginFunction = async () => {
-        // console.log(loginInput.email)
-        // console.log(loginInput.password)
         try {
             const res = await fetch("/api/auth/login", {
                 method: "POST",
@@ -60,42 +55,25 @@ const AuthProvider = ({ children }) => {
                     email: loginInput.email,
                     password: loginInput.password
                 })
+            });
+            const data = await res.json();
 
-            })
-            const data = await res.json()
-            console.log(data);
-
-            localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
-            localStorage.setItem("foundUser", JSON.stringify(data.foundUser));
-            setUserToken(data.encodedToken);
-            setUserDetails(data.foundUser);
-            setLoginInput({
-                email: "",
-                password: ""
-            })
-
+            if (data.encodedToken && data.foundUser) {
+                localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
+                localStorage.setItem("foundUser", JSON.stringify(data.foundUser));
+                setUserToken(data.encodedToken);
+                setUserDetails(data.foundUser);
+                setLoginInput({ email: "", password: "" });
+            } else {
+                notifyError("Login failed. Please check your credentials.");
+            }
+        } catch (err) {
+            console.log(err);
+            notifyError("An error occurred during login.");
         }
-        catch (err) {
-            console.log(err)
-        }
-
     };
-
-    const dummyLogin = () => {
-        setLoginInput({
-            email: "gautam05102002@gmail.com",
-            password: "gautam123"
-        })
-        if (loginInput.email === "gautam05102002@gmail.com")
-            loginFunction()
-    };
-
-
-    /*----------Signup----------*/
 
     const signupFunction = async () => {
-        // console.log(loginInput.email)
-        // console.log(loginInput.password)
         try {
             const res = await fetch("/api/auth/signup", {
                 method: "POST",
@@ -105,63 +83,59 @@ const AuthProvider = ({ children }) => {
                     email: signupInput.email,
                     password: signupInput.password
                 })
+            });
+            const data = await res.json();
 
-            })
-            const data = await res.json()
-            console.log(data);
-            if (data.error) {
-                console.log(data.error)
-            }
-            else {
+            if (data.encodedToken && data.createdUser) {
                 localStorage.setItem("userToken", JSON.stringify(data.encodedToken));
                 localStorage.setItem("foundUser", JSON.stringify(data.createdUser));
                 setUserToken(data.encodedToken);
                 setCreatedUser(data.createdUser);
-                setSignupInput({
-                    fname: "",
-                    lname: "",
-                    email: "",
-                    password: ""
-                })
+                setSignupInput({ fname: "", lname: "", email: "", password: "" });
+            } else {
+                notifyError("Signup failed. Please try again.");
             }
-
+        } catch (err) {
+            console.log(err);
+            notifyError("An error occurred during signup.");
         }
-        catch (err) {
-            console.log(err)
-        }
-
     };
 
-    const signuplogin = () => {
-        setSignupInput({
-            fname: "Anand",
-            lname: "Gautam",
-            email: "gautam05102002@gmail.com",
-            password: "gautam123"
-        })
-        if (signupInput.email === "gautam05102002@gmail.com")
-            signupFunction()
-    };
-
-
-    const logouthandler = () => {
+    const logoutHandler = () => {
         localStorage.removeItem("userToken");
         localStorage.removeItem("foundUser");
         setUserToken("");
         setUserDetails({});
     };
 
+    const dummyLogin = () => {
+        setLoginInput({ email: "gautam05102002@gmail.com", password: "gautam123" });
+        loginFunction();
+    };
+
+    const signupLogin = () => {
+        setSignupInput({ fname: "Anand", lname: "Gautam", email: "gautam05102002@gmail.com", password: "gautam123" });
+        signupFunction();
+    };
+
     return (
-        <authContext.Provider value={{ notifyInfo, notifySuccess, loginFunction, logouthandler, userToken, dummyLogin, setLoginInput, signupFunction, signuplogin, setSignupInput }}>
+        <authContext.Provider value={{
+            notifyInfo,
+            notifySuccess,
+            loginFunction,
+            logoutHandler,
+            userToken,
+            dummyLogin,
+            setLoginInput,
+            signupFunction,
+            signupLogin,
+            setSignupInput
+        }}>
             {children}
         </authContext.Provider>
+    );
+};
 
-    )
-
-}
-const useGlobalAuth = () => {
-    return useContext(authContext);
-}
+const useGlobalAuth = () => useContext(authContext);
 
 export { AuthProvider, useGlobalAuth };
-
